@@ -1,8 +1,9 @@
 # Escuela_DDR
 
 ## Pruebas de pequeños ejercicios (antes de comenzar con la parte de ejercicios a realizar) 
-  -> Secciones 1-9 completos
+  -> Secciones 1-9 completas
 ## Ejercicios 
   -> Sección 10
 ## Otros:
-  -> Secciones 11-13 completos
+  -> Secciones 11-13 completas
+  -> Sección 17
