@@ -1,6 +1,6 @@
 /*
 Ejercicio completo con HTML y CSS
-1. Crear un documento HTML y vincularlo con un CSS.
+(HECHO) 1. Crear un documento HTML y vincularlo con un CSS.
 2. Crear una estructura HTML que cuente con un CONTENEDOR GENERAL 
     , CABECERA, BARRA LATERAL, SECCION DE CONTENIDO PRINCIPAL,
     ELEMENTOS DENTRO DEL CONTENEDOR PRINCIPAL, Y FOOTER.
@@ -16,3 +16,14 @@ Ejercicio completo con HTML y CSS
 9. El footer debe tener un ancho del 100% del div que lo contiene
     y estar abajo del todo.
 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+body {
+
+}
+
