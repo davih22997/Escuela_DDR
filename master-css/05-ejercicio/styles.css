@@ -75,8 +75,10 @@ Ejercicio completo con HTML y CSS
 }
 
 #contenido {
-    width: 69%;
+    width: 69.889%;
     float: left;
+    color: #444;
+    text-shadow: 1px 1px 2px gray;
 }
 
 #lateral {
@@ -92,17 +94,28 @@ Ejercicio completo con HTML y CSS
     border-bottom: 1px solid #ccc;
     padding: 15px;
     color: #444;
+    text-shadow: 1px 1px 2px gray;
 }
 
 #contenido .caja {
     width: 40%;
     height: 250px;
-    background-color: red;
-    border: 5px solid blue;
+    background-color: #ccc;
+    border: 1px solid gray;
     color: white;
     float: left;
     margin: 20px;
     margin-left: 40px;
+    text-align: center;
+    line-height: 200px;
+    color: #444;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 50px 10px 4px 61px;
+}
+
+.sombra-interior {
+    box-shadow: 0px 0px 20px gray inset !important;
 }
 
 footer {
