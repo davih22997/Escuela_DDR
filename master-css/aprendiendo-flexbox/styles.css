@@ -11,7 +11,10 @@ body {
     flex-wrap: wrap;
     */
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
+    height: 600px;
+    align-items: flex-start;
 
     border: 3px solid black;
     padding: 5px;
@@ -30,21 +33,29 @@ body {
 }
 
 .red {
+    align-self: flex-start;
     /*
     background: red;
     */
     background: var(--rojo);
+
 }
 
 .green {
+    /*
+    margin-top: 10%;
+    */
+    align-self: center;
     background: green;
 }
 
 .blue {
+    align-self: center;
     background: blue;
 }
 
 .orange {
+    align-self: flex-end;
     background: orange;
 }
 
