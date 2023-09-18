@@ -111,6 +111,7 @@ Ejercicio completo con HTML y CSS
     color: #444;
     text-transform: uppercase;
     box-shadow: 5px 5px 10px gray;
+    border-radius: 50px 10px 4px 61px;
 }
 
 .sombra-interior {
