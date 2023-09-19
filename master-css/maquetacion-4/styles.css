@@ -164,6 +164,11 @@
 }
 
 #footer {
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    align-items: center;
+    justify-content: start;
+
     height: 120px;
     align-items: center;
     border-top: 1px solid rgba(225, 225, 226, 0.8);
@@ -171,14 +176,11 @@
 
 #footer .logo {
     opacity: 0.5;
-    order: 2;
-    text-align: right;
+    text-align: left;
     margin-right: 20px;
 }
 
 #footer .info {
-    flex-grow: 1;
-    order: 1;
     margin-left: 20px;
     color: #444;
 }
