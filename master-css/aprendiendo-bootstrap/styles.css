@@ -7,3 +7,7 @@
     list-style: none;
     line-height: 50px;
 }
+
+.item {
+    height: 150px;
+}
