@@ -10,8 +10,8 @@ body {
 
     /* Definir el grid layout */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr) 3fr
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr) 3fr;
 
     /* Espacios entre elementos grid */
     grid-gap: 10px;
@@ -29,6 +29,8 @@ body {
 }
 
 .layout .red {
+    grid-column-start: 1;
+    grid-column-end: 4;
     background: red;
 }
 
@@ -37,16 +39,24 @@ body {
 }
 
 .layout .blue {
+    grid-column: 2 / 4;
     background: blue;;
 }
 
 .layout .pink {
+    grid-column: 1 / 3;
     background: palevioletred;
 }
 .layout .orange {
     background: orange;
 }
 .layout .lightblue {
+    /*
+    grid-column-start: 1;
+    grid-column-end: 3;
+    */
+    grid-column: 1 / 4;
+
     background: lightblue;
 }
 
