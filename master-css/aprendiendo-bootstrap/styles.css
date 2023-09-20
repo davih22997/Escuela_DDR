@@ -22,5 +22,5 @@ footer {
 }
 
 .lateral > div {
-    height: 150px;
+    height: calc(250px /3);
 }
