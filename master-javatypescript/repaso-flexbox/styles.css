@@ -1,0 +1,44 @@
+body {
+    background-color: beige;
+}
+
+.flex-container {
+    border: solid black;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+
+    width: 80%;
+    margin: 0 auto;
+}
+
+.caja {
+    border: 1px solid rgb(70, 69, 69);
+    background-color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 200px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    margin: 5px;
+}
+
+.c1 {
+    background-color: lightblue;
+    flex-grow: 1;
+}
+
+.c2 {
+    background-color: lightcoral;
+    flex-grow: 5;
+}
+
+.c3 {
+    background-color: lightgreen;
+    flex-grow: 1;
+}
