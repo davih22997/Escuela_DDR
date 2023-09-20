@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <title>Aprendiendo Bootstrap con Víctor Robles</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -25,7 +25,8 @@
                 <h1>Aprendiendo Bootstrap con Víctor Robles</h1>
             </header>
 
-            <nav id="menu" class="col-12 bg-secondary text-white">
+            <nav id="menu" class="col-12 bg-secondary text-white d-block 
+                                d-none d-sm-none d-md-block">
                 <ul class="row w-50">
                     <li class="col col-xs-12 col-sm-12 col-md">Inicio</li>
                     <li class="col col-xs-12 col-sm-12 col-md">Página 1</li>
@@ -37,7 +38,7 @@
 
             <section id="content" class="col-12">
                 <div class="row">
-                    <section id="products" class="col-9 border">
+                    <section id="products" class="col-12 col-sm-12 col-md-9 border">
                         <h2>Productos</h2>
                         <hr>
                         <div class="items">
@@ -81,7 +82,7 @@
                             </div>
                         </div>                    
                     </section>
-                    <aside class="col-3 border">
+                    <aside class="col-3 border d-none d-sm-none d-md-block">
                         <h2>Barra lateral</h2>
 
                         <div class="lateral row bg-light align-items-center">
