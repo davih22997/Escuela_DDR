@@ -7,13 +7,13 @@
 ### Secciones:
   - Secciones 1-9 completas
   - Secciones 11-13 completas
-  - Sección 17
-  - Sección 29
-  - Sección 30
-  - Sección 32
-  - Sección 35
+  - Sección 17 completa
+  - Sección 29 completa
+  - Sección 30 completa
+  - Sección 32 completa
+  - Sección 35 completa
   - Secciones 37-40 completas
 
 ## Javascript & CSS
 ### Secciones:
-- Sección 1-2
+- Sección 1-6 completas
