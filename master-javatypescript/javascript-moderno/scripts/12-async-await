@@ -1,0 +1,37 @@
+let productos = [
+    {
+        nombre: "Ordenador Gaming",
+        marca: "Asus",
+        precio: 1200
+    },
+    {
+        nombre: "Tablet",
+        marca: "Samsung",
+        precio: 300
+    },
+    {
+        nombre: "Cámara Reflex",
+        marca: "Canon",
+        precio: 650
+    }
+];
+
+function conseguirProductos() {
+
+    return new Promise((resolve, reject) => {
+        console.log("Cargando...");
+
+        setTimeout(() => {
+            resolve(productos);
+            // reject(Error("¡Ha ocurrido un error!"));
+        }, 3500);
+    });
+
+}
+
+async function getMisProductos() {
+    let mis_productos = await conseguirProductos();
+    console.log(mis_productos);
+}
+
+getMisProductos();
