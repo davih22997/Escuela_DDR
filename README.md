@@ -16,4 +16,4 @@
 
 ## Javascript & CSS
 ### Secciones:
-- Secciones 1-14 completas
+- Secciones 1-15 completas
