@@ -38,3 +38,28 @@ multiplicacion(2, 3);
 
 let multiplicacion2 = (n1, n2) => console.log(n1 * n2);
 multiplicacion2(2, 3);
+
+// JSON
+let tienda = {
+    nombre: "GAME",
+    videojuegos: ["GTA", "WWE", "FIFA"],
+    mostrar: function() {
+        console.log(this.nombre);
+    },
+    mostrar2 () {
+        this.videojuegos.forEach((juego) => {
+            if (juego === "GTA") {
+                console.log("El mejor juego de la historia");
+            } else {
+                console.log(juego)
+            }
+        });
+    },
+    mostrar3: () => {
+        console.log(tienda.nombre);
+    }
+}
+
+tienda.mostrar();
+tienda.mostrar2();
+tienda.mostrar3();
