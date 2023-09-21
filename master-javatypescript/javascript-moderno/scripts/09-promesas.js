@@ -48,6 +48,7 @@ function procesarVenta(venta) {
     productos = productos.filter(producto => producto.nombre != venta.producto);
 }
 
+/*
 conseguirProductos().
     then(items => {
         console.log("Productos disponibles:", items);
@@ -68,8 +69,18 @@ conseguirProductos().
             console.log("Productos que quedan disponibles:", productos);
         else
             console.log("No quedan productos disponibles")
-        
+
         console.log("¡PROMESA FINALIZADA!");
+    });
+*/
+
+    Promise.all([
+        conseguirProductos(), 
+        productoComprado("Ordenador Gaming"), 
+        productoComprado("Tablet")
+    ])
+    .then(venta => {
+        console.log(venta);
     });
 
 
