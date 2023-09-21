@@ -35,6 +35,11 @@ class Coche{
         return this.marca;
     }
 
+    // Método estático
+    static saludar(nombre) {
+        return "Hola " + nombre;
+    }
+
 }
 
 // Crear objeto
@@ -56,3 +61,4 @@ console.log(mi_coche.devolverMarca);
 let segundo_coche = new Coche({modelo: "Clio", marca: "Renault", year: 2013});
 console.log(segundo_coche.marca, segundo_coche.modelo, segundo_coche.year);
 
+console.log(Coche.saludar("Víctor"));
