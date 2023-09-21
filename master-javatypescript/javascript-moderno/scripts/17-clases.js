@@ -1,6 +1,9 @@
 // Molde
 class Coche{
     
+    #npuertas = 4;
+    _nplazas = 5;
+
     // Método que se ejecuta primero
     constructor( {
         marca = "Mercedes", 
@@ -35,6 +38,14 @@ class Coche{
         return this.marca;
     }
 
+    get numeroPuertas() {
+        return this.#npuertas;
+    }
+
+    get numeroPlazas() {
+        return this._nplazas;
+    }
+
     // Método estático
     static saludar(nombre) {
         return "Hola " + nombre;
@@ -62,3 +73,6 @@ let segundo_coche = new Coche({modelo: "Clio", marca: "Renault", year: 2013});
 console.log(segundo_coche.marca, segundo_coche.modelo, segundo_coche.year);
 
 console.log(Coche.saludar("Víctor"));
+
+console.log(mi_coche.numeroPuertas);
+console.log(mi_coche.numeroPlazas);
