@@ -24,15 +24,53 @@ function conseguirProductos() {
         setTimeout(() => {
             resolve(productos);
             // reject(Error("¡Ha ocurrido un error!"));
-        }, 500);
+        }, 3500);
     });
 
 }
 
+function productoComprado(nombre = "Ordenador Gaming") {
+    return new Promise((resolve, reject) => {
+        console.log("Haciendo la compra...");
+
+        setTimeout(() => {
+            resolve({
+                producto: nombre,
+                cliente: "Víctor Robles WEB"
+            });
+        }, 3000);
+    });
+}
+
+function procesarVenta(venta) {
+    console.log("Producto comprado:", venta);
+
+    productos = productos.filter(producto => producto.nombre != venta.producto);
+}
+
 conseguirProductos().
-    then(items => console.log(items))
+    then(items => {
+        console.log("Productos disponibles:", items);
+        return productoComprado("Tablet");
+    })
+    .then(venta => {
+        procesarVenta(venta);
+        return productoComprado("Cámara Reflex");
+    })
+    .then(venta => {
+        procesarVenta(venta);
+        return productoComprado();
+    })
+    .then(venta => procesarVenta(venta))
     .catch(error => console.log(error.message))
-    .finally (() => console.log("¡PROMESA FINALIZADA!"));
+    .finally (() => {
+        if (productos.length >= 1)
+            console.log("Productos que quedan disponibles:", productos);
+        else
+            console.log("No quedan productos disponibles")
+        
+        console.log("¡PROMESA FINALIZADA!");
+    });
 
 
 
