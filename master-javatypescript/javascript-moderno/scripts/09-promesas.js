@@ -19,6 +19,8 @@ let productos = [
 function conseguirProductos() {
 
     return new Promise((resolve, reject) => {
+        console.log("Cargando...");
+        
         setTimeout(() => {
             resolve(productos);
         }, 500);
