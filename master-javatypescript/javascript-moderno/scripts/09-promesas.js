@@ -20,15 +20,19 @@ function conseguirProductos() {
 
     return new Promise((resolve, reject) => {
         console.log("Cargando...");
-        
+
         setTimeout(() => {
             resolve(productos);
+            // reject(Error("¡Ha ocurrido un error!"));
         }, 500);
     });
 
 }
 
-conseguirProductos().then(items =>console.log(items));
+conseguirProductos().
+    then(items => console.log(items))
+    .catch(error => console.log(error.message))
+    .finally (() => console.log("¡PROMESA FINALIZADA!"));
 
 
 
