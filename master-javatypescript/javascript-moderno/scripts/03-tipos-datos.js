@@ -60,6 +60,21 @@ for (let propiedad in pelicula) {
 }
 
 // Symbol
+let animal = Symbol("tigre");
+let animal2 = Symbol("tigre");
+
+console.log(animal, animal2);
+console.log(animal == animal2);
+
+let user = {
+    id: 1,
+    nombre: "Víctor Robles",
+    web: "victorroblesweb.es"
+}
+
+let id = Symbol('id');
+user[id] = 7;
+console.log(user.id, user[id]);
 
 
 
