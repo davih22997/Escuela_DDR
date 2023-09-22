@@ -20,3 +20,10 @@ console.log(gadgets.has(2))
 console.log(gadgets.has("cinco"))
 console.log(gadgets.has("laptop"))
 
+// WeakMap y WeakSet
+// -> Similares a Map y Set
+// -> Tiene restricción de que solo puede meter
+// objetos de JS
+// -> Más restrictivos y menos útiles (opinión del instructor)
+
+
