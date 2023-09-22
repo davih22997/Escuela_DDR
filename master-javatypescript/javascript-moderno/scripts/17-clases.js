@@ -76,3 +76,35 @@ console.log(Coche.saludar("Víctor"));
 
 console.log(mi_coche.numeroPuertas);
 console.log(mi_coche.numeroPlazas);
+
+// Herencia
+class Quad extends Coche {
+    constructor({cilindrada = 3, marca, modelo, color, velocidad, year}) {
+        super({marca: marca, modelo: modelo, color: color, velocidad: velocidad, year: year});
+        this.cilindros = cilindrada;
+    }
+
+    saltar() {
+        return "Has saltado una rampa";
+    }
+
+}
+
+let mi_quad = new Quad({
+    marca: "Suzuki", 
+    modelo: "Loquesea", 
+    color: "Amarillo",
+    year: 2030,
+    velocidad: 200
+});
+
+mi_quad.subirVelocidad();
+mi_quad.subirVelocidad();
+mi_quad.subirVelocidad();
+
+console.log(mi_quad);
+
+mi_quad.guardarMarca = "Invento";
+console.log(mi_quad.devolverMarca);
+
+console.log(mi_quad.saltar());
