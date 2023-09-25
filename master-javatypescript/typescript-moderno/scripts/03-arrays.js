@@ -8,3 +8,13 @@ console.log(personas, years);
 // Tuplas
 let pelicula = ["Batman Begins", true, 1990];
 console.log(pelicula.length);
+// Enum - enumeración
+var DatosPersonales;
+(function (DatosPersonales) {
+    DatosPersonales["nombre"] = "Victor";
+    DatosPersonales[DatosPersonales["dni"] = 771987] = "dni";
+    DatosPersonales["direccion"] = "Calle de la fantasia";
+    DatosPersonales["ciudad"] = "Zaragoza";
+})(DatosPersonales || (DatosPersonales = {}));
+console.log(typeof (DatosPersonales));
+console.log(DatosPersonales.nombre, DatosPersonales.dni);
