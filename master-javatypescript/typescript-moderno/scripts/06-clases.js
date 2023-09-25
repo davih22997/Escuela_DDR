@@ -9,10 +9,11 @@ class Coche {
         this.velocidad = 0;
     }
     arrancar() {
+        console.log("Clase padre");
         this.arrancado = true;
     }
     acelerar() {
-        this.velocidad++;
+        this.velocidad += 5;
     }
     apagar() {
         this.arrancado = false;
@@ -32,11 +33,39 @@ class Coche {
     get getColor() {
         return this.color;
     }
+    static saludar() {
+        return "Hola qué tal";
+    }
 }
-let mi_coche = new Coche("Renault", "Clio", 2001, "azul");
+class Camioneta extends Coche {
+    constructor(marca = "Renault", modelo = "Clio", year = 2000, color = "rojo") {
+        super(marca, modelo, year, color);
+        this.marca = marca;
+        this.modelo = modelo;
+        this.year = year;
+        this.color = color;
+    }
+    arrancar() {
+        console.log("Clase hija");
+        this.velocidad = 200;
+        this.arrancado = true;
+        console.log(this);
+    }
+    mostrar() {
+        super.arrancar();
+        return this.arrancado;
+    }
+}
+let miCamioneta = new Camioneta("Jeep", "Nose", 1990, "negro");
+console.log(miCamioneta.mostrarTodo());
+/*
+let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();
 mi_coche.acelerar();
 mi_coche.darColor = "naranja";
 mi_coche.darColor;
+
 console.log(mi_coche.marca, mi_coche.modelo);
 console.log(mi_coche);
+console.log(Coche.saludar());
+*/ 

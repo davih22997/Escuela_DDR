@@ -29,8 +29,8 @@ class Coche {
    // privadas: solo desde dentro de esta clase
 
 
-    private arrancado:boolean;
-    private velocidad:number;
+    protected arrancado:boolean;
+    protected velocidad:number;
 
     constructor(
         public marca:string="Renault", 
@@ -44,11 +44,12 @@ class Coche {
     }
 
     public arrancar():void {
+        console.log("Clase padre")
         this.arrancado = true;
     }
 
     public acelerar():void {
-        this.velocidad++;
+        this.velocidad += 5;
     }
 
     public apagar():void {
@@ -75,8 +76,40 @@ class Coche {
         return this.color;
     }
 
+    static saludar():string {
+        return "Hola qué tal";
+    }
+
 }
 
+class Camioneta extends Coche {
+    constructor(
+        public marca:string="Renault", 
+        public modelo:string="Clio", 
+        public year:number=2000, 
+        public color:string= "rojo",
+    ) {
+        super(marca, modelo, year, color);
+    }
+
+    public arrancar():void {
+        console.log("Clase hija");
+        this.velocidad = 200;
+        this.arrancado = true;
+        console.log(this);
+    }
+
+
+    public mostrar() {
+        super.arrancar();
+        return this.arrancado;
+    }
+}
+
+let miCamioneta = new Camioneta("Jeep", "Nose", 1990, "negro");
+console.log(miCamioneta.mostrarTodo());
+
+/*
 let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();
 mi_coche.acelerar();
@@ -85,3 +118,5 @@ mi_coche.darColor;
 
 console.log(mi_coche.marca, mi_coche.modelo);
 console.log(mi_coche);
+console.log(Coche.saludar());
+*/
