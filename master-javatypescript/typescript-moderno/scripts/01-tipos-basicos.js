@@ -12,4 +12,10 @@ normal = 14;
 let persona = "Victor Robles";
 persona = "Antonio";
 // persona = null;
+let cualquiera = "Soy un texto";
+cualquiera = 1;
+cualquiera = true;
+if (typeof cualquiera === "number") {
+    let mi_numero = cualquiera;
+}
 console.log(normal);

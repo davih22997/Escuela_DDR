@@ -16,5 +16,13 @@ let persona:string = "Victor Robles";
 persona = "Antonio";
 // persona = null;
 
+let cualquiera:unknown = "Soy un texto";
+cualquiera = 1;
+cualquiera = true;
+
+if (typeof cualquiera === "number") {
+    let mi_numero:number = cualquiera;
+}
+
 console.log(normal);
 
