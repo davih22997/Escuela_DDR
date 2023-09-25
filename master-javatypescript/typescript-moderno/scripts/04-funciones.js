@@ -15,3 +15,12 @@ function finApp() {
     throw new Error("La aplicación se ha cerrado...");
 }
 // finApp();
+// Parámetros en funciones
+function mostrarPais(pais, continente) {
+    let resultado = "Faltan datos";
+    if (pais && continente) {
+        resultado = pais + " " + continente;
+    }
+    return resultado;
+}
+console.log(mostrarPais("Italia"));

@@ -5,7 +5,6 @@ function saludo(nombre:string):string {
 
 console.log(saludo("Victor Robles"))
 
-
 // Nada / void
 function mostrarFecha():void {
     console.log("20-07-2023");
@@ -19,3 +18,17 @@ function finApp():never {
 }
 
 // finApp();
+
+// Parámetros en funciones
+function mostrarPais(pais?:string, continente?:string):string {
+    let resultado: string = "Faltan datos";
+
+    if (pais && continente) {
+        resultado = pais + " " + continente;
+    }
+
+    return resultado;
+} 
+
+console.log(mostrarPais("Italia"));
+
