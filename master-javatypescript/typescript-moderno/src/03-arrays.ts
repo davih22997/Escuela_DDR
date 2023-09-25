@@ -1,3 +1,4 @@
+// Array
 let personas:string[] = ["Victor", "Paco", "Fran"]
 
 personas.push("david");
@@ -7,3 +8,7 @@ years.push(2025);
 
 console.log(personas, years)
 
+// Tuplas
+let pelicula:[string, boolean, number] = ["Batman Begins", true, 1990]
+
+console.log(pelicula.length)
