@@ -18,3 +18,7 @@ var DatosPersonales;
 })(DatosPersonales || (DatosPersonales = {}));
 console.log(typeof (DatosPersonales));
 console.log(DatosPersonales.nombre, DatosPersonales.dni);
+// Cast o convertir a otro tipo
+let valor_desconocido = "esto viene en una petición ajax";
+let frase_final = valor_desconocido;
+console.log(frase_final);

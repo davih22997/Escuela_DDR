@@ -23,3 +23,9 @@ enum DatosPersonales {
 
 console.log(typeof(DatosPersonales));
 console.log(DatosPersonales.nombre, DatosPersonales.dni);
+
+// Cast o convertir a otro tipo
+let valor_desconocido:any = "esto viene en una petición ajax";
+let frase_final:string = <string>valor_desconocido;
+
+console.log(frase_final);
