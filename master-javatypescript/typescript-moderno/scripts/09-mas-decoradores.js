@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 function modmen(mostrar) {
     return function info(target, propertyKey, descriptor) {
         if (mostrar) {
@@ -22,7 +25,18 @@ function modmen(mostrar) {
         }
     };
 }
+function mi_propiedad(target, propertyKey, parameterIndex) {
+    console.log("Esta propiedad está en la clase " +
+        target.constructor.name +
+        " y la propiedad se llama " +
+        propertyKey +
+        ". Y la posición del parámetro es " +
+        parameterIndex);
+}
 class Ordenador {
+    constructor() {
+        this.marca = "Asus";
+    }
     encender(mensaje) {
         console.log("Encendiendo...");
         console.log(mensaje);
@@ -30,6 +44,7 @@ class Ordenador {
 }
 __decorate([
     modmen(false),
+    __param(0, mi_propiedad),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
