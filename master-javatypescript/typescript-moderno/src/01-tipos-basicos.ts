@@ -12,5 +12,9 @@ let normal:any = "cualquier cosa";
 normal = true;
 normal = 14;
 
+let persona:string = "Victor Robles";
+persona = "Antonio";
+// persona = null;
+
 console.log(normal);
 
