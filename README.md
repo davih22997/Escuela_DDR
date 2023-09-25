@@ -17,3 +17,7 @@
 ## Javascript & CSS
 ### Secciones:
 - Secciones 1-21 completas
+
+## Typescript
+### Secciones:
+- Secciones 22-23 completas
