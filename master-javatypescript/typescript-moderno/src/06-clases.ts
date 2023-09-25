@@ -1,4 +1,4 @@
-class Coche {
+abstract class Coche {
 
     /*
     marca:string;
