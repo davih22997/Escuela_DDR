@@ -30,3 +30,7 @@ grupos = function (datos) {
     return "Mis grupos favoritos son: " + datos.toString();
 };
 console.log(grupos(["Natos y waor", "La fuga", "Metallica"]));
+function tekken(personaje, atuendo) {
+    return `El personaje es ${personaje} y lleva el atuendo ${atuendo}`;
+}
+console.log(tekken("Tigre", "comprado"));
