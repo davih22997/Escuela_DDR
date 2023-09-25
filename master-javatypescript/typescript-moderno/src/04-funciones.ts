@@ -4,7 +4,6 @@ function saludo(nombre:string):string {
 };
 
 console.log(saludo("Victor Robles"))
-finApp();
 
 // Nada / void
 function mostrarFecha():void {
@@ -17,3 +16,29 @@ mostrarFecha();
 function finApp():never {
     throw new Error("La aplicación se ha cerrado...");
 }
+
+// finApp();
+
+// Parámetros en funciones
+function mostrarPais(pais?:string, continente?:string):string {
+    let resultado: string = "Faltan datos";
+
+    if (pais && continente) {
+        resultado = pais + " " + continente;
+    }
+
+    return resultado;
+} 
+
+console.log(mostrarPais("Italia"));
+
+// Tipo función
+let grupos: (datos:string[]) => string;
+
+grupos = function(datos:string[]) {
+    return "Mis grupos favoritos son: " + datos.toString();
+}
+
+console.log(grupos(["Natos y waor", "La fuga", "Metallica"]));
+
+
