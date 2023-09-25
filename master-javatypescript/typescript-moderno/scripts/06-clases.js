@@ -7,6 +7,7 @@ class Coche {
         this.color = color;
         this.arrancado = false;
         this.velocidad = 0;
+        this.prueba = "victorroblesweb.es";
     }
     arrancar() {
         console.log("Clase padre");
@@ -58,6 +59,7 @@ class Camioneta extends Coche {
 }
 let miCamioneta = new Camioneta("Jeep", "Nose", 1990, "negro");
 console.log(miCamioneta.mostrarTodo());
+console.log(miCamioneta);
 /*
 let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();

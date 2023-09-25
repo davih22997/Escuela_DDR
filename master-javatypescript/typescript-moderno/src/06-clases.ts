@@ -27,7 +27,7 @@ class Coche {
    // public: accesible desde cualquier parte
    // protected: desde dentro de la clase y clases hijas
    // privadas: solo desde dentro de esta clase
-
+    public prueba: string;
 
     protected arrancado:boolean;
     protected velocidad:number;
@@ -41,6 +41,7 @@ class Coche {
     {
         this.arrancado = false;
         this.velocidad = 0;
+        this.prueba = "victorroblesweb.es";
     }
 
     public arrancar():void {
@@ -108,6 +109,8 @@ class Camioneta extends Coche {
 
 let miCamioneta = new Camioneta("Jeep", "Nose", 1990, "negro");
 console.log(miCamioneta.mostrarTodo());
+console.log(miCamioneta);
+
 
 /*
 let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
