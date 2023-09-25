@@ -63,8 +63,16 @@ class Coche {
         return this.year + " " + this.color;
     }
 
-    private mostrarTodo():string {
+    public mostrarTodo():string {
         return this.mostrarCoche() + " " + this.mostrarCualidades();
+    }
+
+    public set darColor(color:string) {
+        this.color = color;
+    }
+
+    public get getColor():string {
+        return this.color;
     }
 
 }
@@ -72,6 +80,8 @@ class Coche {
 let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();
 mi_coche.acelerar();
+mi_coche.darColor = "naranja";
+mi_coche.darColor;
 
 console.log(mi_coche.marca, mi_coche.modelo);
 console.log(mi_coche);
