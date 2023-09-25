@@ -41,4 +41,17 @@ grupos = function(datos:string[]) {
 
 console.log(grupos(["Natos y waor", "La fuga", "Metallica"]));
 
+// Tipo literal
+// atuendo: "especial" | 1 | 2 | 3 | 4
+
+// Tipo personalizado o alias
+type traje = "especial" | 1 | 2 | 3 | 4 | "comprado"
+
+function tekken(personaje:string, atuendo: traje):string {
+    return `El personaje es ${personaje} y lleva el atuendo ${atuendo}`;
+}
+
+console.log(tekken("Tigre", "comprado"));
+
+
 
