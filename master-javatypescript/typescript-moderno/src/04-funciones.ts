@@ -4,7 +4,7 @@ function saludo(nombre:string):string {
 };
 
 console.log(saludo("Victor Robles"))
-finApp();
+
 
 // Nada / void
 function mostrarFecha():void {
@@ -17,3 +17,5 @@ mostrarFecha();
 function finApp():never {
     throw new Error("La aplicación se ha cerrado...");
 }
+
+// finApp();

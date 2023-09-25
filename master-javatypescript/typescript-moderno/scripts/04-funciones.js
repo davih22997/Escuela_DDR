@@ -5,7 +5,6 @@ function saludo(nombre) {
 }
 ;
 console.log(saludo("Victor Robles"));
-finApp();
 // Nada / void
 function mostrarFecha() {
     console.log("20-07-2023");
@@ -15,3 +14,4 @@ mostrarFecha();
 function finApp() {
     throw new Error("La aplicación se ha cerrado...");
 }
+// finApp();
