@@ -3,13 +3,9 @@ let empresa = {
     nombre: "MICROSOFT INC.",
     sector: "Informática",
     servicios: ["Sistemas operativos", "ofimatica", "consolas"],
-    facturacion: 55000000000
+    facturacion: 55000000000,
+    mostrar() {
+        return this.nombre + " " + this.sector;
+    }
 };
-empresa = {
-    nombre: "hola",
-    servicios: [],
-    sector: "no",
-    facturacion: 1
-};
-empresa.sector = "Hola";
-console.log(typeof (empresa.facturacion));
+console.log(empresa.mostrar());
