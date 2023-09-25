@@ -32,3 +32,13 @@ function mostrarPais(pais?:string, continente?:string):string {
 
 console.log(mostrarPais("Italia"));
 
+// Tipo función
+let grupos: (datos:string[]) => string;
+
+grupos = function(datos:string[]) {
+    return "Mis grupos favoritos son: " + datos.toString();
+}
+
+console.log(grupos(["Natos y waor", "La fuga", "Metallica"]));
+
+
