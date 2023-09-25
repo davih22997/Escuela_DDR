@@ -1,10 +1,10 @@
 "use strict";
 class Coche {
-    constructor() {
-        this.marca = "Renault";
-        this.modelo = "Clio";
-        this.year = 2000;
-        this.color = "rojo";
+    constructor(marca = "Renault", modelo = "Clio", year = 2000, color = "rojo") {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.year = year;
+        this.color = color;
         this.arrancado = false;
         this.velocidad = 0;
     }
@@ -15,6 +15,6 @@ class Coche {
         this.arrancado = false;
     }
 }
-let mi_coche = new Coche();
+let mi_coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();
-console.log(mi_coche.modelo, mi_coche.arrancado);
+console.log(mi_coche);
