@@ -24,10 +24,13 @@ class Coche {
         this.velocidad = velocidad;
     }
     */
+   // public: accesible desde cualquier parte
+   // protected: desde dentro de la clase y clases hijas
+   // privadas: solo desde dentro de esta clase
 
 
-    arrancado:boolean;
-    velocidad:number;
+    private arrancado:boolean;
+    private velocidad:number;
 
     constructor(
         public marca:string="Renault", 
@@ -40,17 +43,35 @@ class Coche {
         this.velocidad = 0;
     }
 
-    arrancar():void {
+    public arrancar():void {
         this.arrancado = true;
     }
 
-    apagar():void {
+    public acelerar():void {
+        this.velocidad++;
+    }
+
+    public apagar():void {
         this.arrancado = false;
+    }
+
+    private mostrarCoche():string {
+        return this.marca + " " + this.modelo;
+    }
+
+    private mostrarCualidades():string {
+        return this.year + " " + this.color;
+    }
+
+    private mostrarTodo():string {
+        return this.mostrarCoche() + " " + this.mostrarCualidades();
     }
 
 }
 
 let mi_coche:Coche = new Coche("Renault", "Clio", 2001, "azul");
 mi_coche.arrancar();
+mi_coche.acelerar();
 
+console.log(mi_coche.marca, mi_coche.modelo);
 console.log(mi_coche);
