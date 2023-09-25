@@ -32,7 +32,9 @@ elementos.forEach(elemento => {
 document.querySelector("#all").addEventListener("click", (event) => {
     event.target.remove();
     localStorage.clear();
-    document.querySelector("#nombre1").remove();
-    document.querySelector("#nombre2").remove();
-    document.querySelector("#nombre3").remove();
+    datos.innerHTML = "";
 });
+
+// Sacar objeto del LocalStorage
+let persona = JSON.parse(localStorage.getItem("persona"));
+datos.innerHTML += persona.sitio;
