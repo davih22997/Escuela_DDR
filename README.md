@@ -20,4 +20,4 @@
 
 ## Typescript
 ### Secciones:
-- Secciones 22-35 completas
+- Secciones 22-36 completas
