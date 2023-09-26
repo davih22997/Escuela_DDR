@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="main.js" defer></script>
-
     <title>Drag and Drop JS</title>
 
     <style>
@@ -12,7 +11,7 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
-        .caja {
+        .tomate {
             width: 50px;
             height: 50px;
             background-color: tomato;
@@ -22,7 +21,11 @@
             border-radius: 100px;
         }
 
-        #zona-drop {
+        .tomate img {
+            width: 45px;
+        }
+
+        #huerto {
             clear: both;
             width: 90%;
             height: 400px;
@@ -36,12 +39,20 @@
 <body>
     <h1>Drag and Drop JS</h1>
     
-    <div class="caja"></div>
-    <div class="caja"></div>
-    <div class="caja"></div>
-    <div class="caja"></div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
 
-    <section id="zona-drop">
+    <section id="huerto">
         <h1>HUERTO</h1>
     </section>
 
