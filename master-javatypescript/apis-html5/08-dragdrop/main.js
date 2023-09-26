@@ -1,4 +1,4 @@
-const tomates = document.querySelectorAll(".tomate > img");
+const tomates = document.querySelectorAll(".tomate");
 const huerto = document.querySelector("#huerto");
 
 tomates.forEach((tomate, indice) => {
