@@ -11,7 +11,9 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
-        .tomate {
+        .tomate,
+        .lechuga
+        {
             width: 50px;
             height: 50px;
             background-color: tomato;
@@ -25,7 +27,13 @@
             width: 45px;
         }
 
-        #huerto {
+        .lechuga {
+            background-color: springgreen;
+        }
+
+        #huerto, 
+        #cesta
+        {
             clear: both;
             width: 90%;
             height: 400px;
@@ -34,6 +42,14 @@
             text-align: center;
             line-height: 340px;
         }
+
+        #cesta {
+            height: 70px;
+            background-color: wheat;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -58,14 +74,26 @@
     </section>
 -->
 
-<div class="tomate" draggable="true">
-</div>
-<div class="tomate" draggable="true">
-</div>
-<div class="tomate" draggable="true">
-</div>
-<div class="tomate" draggable="true">
-</div>
+<section id="cesta">
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+</section>
+
 
 <section id="huerto">
     <h1>HUERTO</h1>
