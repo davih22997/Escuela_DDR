@@ -1,6 +1,7 @@
 // const tomates = document.querySelectorAll(".tomate");
 const hortalizas = document.querySelectorAll("#cesta > div");
 const huerto = document.querySelector("#huerto");
+const cesta = document.querySelector("#cesta");
 
 hortalizas.forEach((hortaliza, indice) => {
     // Asignar id a elementos
@@ -47,7 +48,7 @@ huerto.addEventListener("drop", (e) => {
     let hortaliza = e.dataTransfer.getData("text");
     e.target.appendChild(document.querySelector("#" + hortaliza));
 
-    console.log("Has plantado el hortaliza: " + hortaliza)
+    console.log("Has plantado la hortaliza: " + hortaliza)
 });
 
 // DRAGLEAVE -> Salta cuando quitas un elemento de dentro de la zona
@@ -56,5 +57,16 @@ huerto.addEventListener("dragleave", (e) => {
     // console.log("Tomate recogido del huerto");
 });
 
+cesta.addEventListener("dragover", (e) => {
+    e.preventDefault();
+});
 
+cesta.addEventListener("drop", (e) => {
+    e.preventDefault();
 
+    // Recibir la info y soltar el elemento en la zona
+    let hortaliza = e.dataTransfer.getData("text");
+    e.target.appendChild(document.querySelector("#" + hortaliza));
+
+    console.log("Has recogido la hortaliza: " + hortaliza)
+});
