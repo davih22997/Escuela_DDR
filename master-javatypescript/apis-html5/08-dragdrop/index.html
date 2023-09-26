@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="main.js" defer></script>
+    <title>Drag and Drop JS</title>
+
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .tomate,
+        .lechuga
+        {
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+            border: 1px solid black;
+            float: left;
+            margin: 20px;
+            border-radius: 100px;
+        }
+
+        .tomate img {
+            width: 45px;
+        }
+
+        .lechuga {
+            background-color: springgreen;
+        }
+
+        #huerto, 
+        #cesta
+        {
+            clear: both;
+            width: 90%;
+            height: 400px;
+            background-color: #ccc;
+            border: 5px black dashed;
+            text-align: center;
+            line-height: 340px;
+        }
+
+        #cesta {
+            height: 70px;
+            background-color: wheat;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Drag and Drop JS</h1>
+    
+<!--
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+    <div class="tomate">
+        <img src="tomate.png" title ="tomate">
+    </div>
+
+    <section id="huerto">
+        <h1>HUERTO</h1>
+    </section>
+-->
+
+<section id="cesta">
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+    <div class="tomate" draggable="true">
+    </div>
+
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+    <div class="lechuga" draggable="true">
+    </div>
+</section>
+
+
+<section id="huerto">
+    <h1>HUERTO</h1>
+</section>
+
+</body>
+</html>
