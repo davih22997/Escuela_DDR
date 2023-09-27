@@ -2,7 +2,9 @@
 
 ## Proyecto de prueba de Angular
 
-Visit our example website on: https://fascinating-tarsier-8b68ae.netlify.app/
+Visit our example website on: 
+- https://fascinating-tarsier-8b68ae.netlify.app/
+- https://davih22997.github.io/Escuela_DDR/
 
 # Bases
 
