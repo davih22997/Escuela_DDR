@@ -20,8 +20,6 @@ export class ListComponent {
   // onDelete = Index value :number
 
   public onDeleteCharacter(index:number):void {
-    // TODO: Emitir el ID del personaje
-    console.log({index});
     this.onDelete.emit(index);
   }
 
