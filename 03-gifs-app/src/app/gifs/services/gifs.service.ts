@@ -47,12 +47,6 @@ export class GifsService {
         console.log({gifs:this.gifList});
       });
 
-
-
-    // fetch('https://api.giphy.com/v1/gifs/search?api_key=4XvatTfT1gmoROr2wm8i68pLTJnyE6D3&q=valorant&limit=10')
-    //   .then(resp => resp.json())
-    //   .then(data => console.log(data));
-
   }
 
 }
