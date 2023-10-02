@@ -1,0 +1,119 @@
+<div
+  id="table"
+  class="
+    col
+    justify-content-center
+    container
+    bg-danger
+    text-center
+    text-white
+    margin-auto
+    p-0
+  "
+>
+  <div
+    id="buttons"
+    class="
+      row
+    "
+  >
+    <button
+      class="
+        col
+      "
+    >
+      Sign in
+    </button>
+    <button
+      class="
+        col
+      "
+    >
+      Sign Up
+    </button>
+  </div>
+
+  <div
+    class="
+      row
+      mt-4
+      justify-content-center
+      text-warning
+      fw-bold
+    "
+  >
+    REGISTRO DE USUARIO
+  </div>
+
+  <form
+    [formGroup]="formData"
+    method = "POST"
+    (ngSubmit)="onClickSubmit('formData.value')"
+  >
+    <div
+      class="container
+      justify-content-center
+      p-4"
+    >
+      <div
+        class="row mt-1"
+      >
+
+      <p
+      class="col">
+        Usuario:
+      </p>
+      <input
+        type="text"
+        class="col fortextbox"
+        formControlName="user"
+      >
+      </div>
+
+
+      <div
+        class="row mt-4"
+      >
+      <p
+      class="col">
+        Contraseña:
+      </p>
+      <input
+        type="password"
+        class="col"
+        formControlName="password"
+      >
+      </div>
+
+      <div
+        class="row mt-4"
+      >
+      <input
+        type="submit"
+        class="col"
+      >
+      </div>
+    </div>
+  </form>
+
+
+  <div>
+    <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit2(formdata.value)" >
+       <input type = "text" class = "fortextbox" name = "emailid" placeholder = "emailid"
+          formControlName="emailid">
+       <br/>
+
+       <input type = "password" class = "fortextbox" name="passwd"
+          placeholder = "passwd" formControlName = "passwd">
+       <br/>
+
+       <input type = "submit" class = "forsubmit" value = "Log In">
+    </form>
+ </div>
+ <p>
+    Email entered is : {{emailid}}
+ </p>
+
+<p>{{ example }}</p>
+
+</div>
