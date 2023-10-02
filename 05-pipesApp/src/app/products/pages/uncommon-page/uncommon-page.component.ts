@@ -20,5 +20,26 @@ changeClient():void {
   this.gender = 'female';
 }
 
+// i18n Plural
+public clients:string[] = [
+  'Maria',
+  'Pedro',
+  'Fernando',
+  'Hernando',
+  'Eduardo',
+  'Melissa',
+  'Natalia'
+]
+
+public clientsMap = {
+  '=0': 'no tenemos ningún cliente esperando.',
+  '=1': 'tenemos # cliente esperando.',
+  'other': 'tenemos # clientes esperando.'
+}
+
+deleteClient(): void {
+  this.clients.shift();
+}
+
 
 }
