@@ -11,6 +11,7 @@
     p-0
   "
 >
+
   <div
     id="buttons"
     class="
@@ -20,13 +21,24 @@
     <button
       class="
         col
+        btn
+        btn-outline-secondary
       "
+      [ngClass]="
+        { 'btn-dark': selected === 'Sign in' }
+      "
+
     >
       Sign in
     </button>
     <button
       class="
         col
+        btn
+        btn-outline-secondary
+      "
+      [ngClass]="
+        { 'btn-outline-dark': selected === 'Sign out' }
       "
     >
       Sign Up
@@ -34,6 +46,7 @@
   </div>
 
   <div
+    id="title"
     class="
       row
       mt-4
@@ -46,15 +59,12 @@
   </div>
 
   <form
-    [formGroup]="formData"
-    method = "POST"
-    (ngSubmit)="onClickSubmit('formData.value')"
-  >
-    <div
-      class="container
+    class="container
       justify-content-center
       p-4"
-    >
+    [formGroup]="formData"
+    (ngSubmit)="onClickSubmit(formData.value)"
+  >
       <div
         class="row mt-1"
       >
@@ -65,11 +75,24 @@
       </p>
       <input
         type="text"
-        class="col fortextbox"
+        class="col"
         formControlName="user"
       >
       </div>
 
+      <div
+        class="row mt-4"
+      >
+      <p
+        class="col">
+        Email:
+      </p>
+      <input
+        type="text"
+        class="col"
+        formControlName="email"
+      >
+      </div>
 
       <div
         class="row mt-4"
@@ -93,27 +116,6 @@
         class="col"
       >
       </div>
-    </div>
   </form>
-
-
-  <div>
-    <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit2(formdata.value)" >
-       <input type = "text" class = "fortextbox" name = "emailid" placeholder = "emailid"
-          formControlName="emailid">
-       <br/>
-
-       <input type = "password" class = "fortextbox" name="passwd"
-          placeholder = "passwd" formControlName = "passwd">
-       <br/>
-
-       <input type = "submit" class = "forsubmit" value = "Log In">
-    </form>
- </div>
- <p>
-    Email entered is : {{emailid}}
- </p>
-
-<p>{{ example }}</p>
 
 </div>

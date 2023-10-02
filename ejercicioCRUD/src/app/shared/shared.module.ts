@@ -4,6 +4,7 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule( {
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   exports: [
     SidebarComponent,
