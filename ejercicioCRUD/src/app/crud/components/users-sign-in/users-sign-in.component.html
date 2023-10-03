@@ -1,1 +1,67 @@
-<p>users-sign-in works!</p>
+<div
+id="title"
+class="
+  row
+  mt-4
+  justify-content-center
+  text-warning
+  fw-bold
+"
+>
+  INICIO DE SESIÓN
+</div>
+
+<form
+  class="container
+  justify-content-center
+  p-4"
+  [formGroup]="formData"
+  (ngSubmit)="onClickSubmit(formData.value)"
+>
+  <div
+    class="row mt-1"
+  >
+
+  <p
+  class="col">
+    Usuario/Email:
+  </p>
+  <input
+    type="text"
+    class="col"
+    formControlName="input"
+  >
+  </div>
+
+  <div
+    class="row mt-4"
+  >
+  <p
+  class="col">
+    Contraseña:
+  </p>
+  <input
+    type="password"
+    class="col"
+    formControlName="password"
+  >
+  </div>
+
+  <div
+    class="row mt-4"
+  >
+  <input
+    type="submit"
+    class="col"
+  >
+
+  </div>
+
+
+</form>
+
+<div class="row">
+  <shared-loading-spinner
+    *ngIf="isLoading"
+  ></shared-loading-spinner>
+</div>

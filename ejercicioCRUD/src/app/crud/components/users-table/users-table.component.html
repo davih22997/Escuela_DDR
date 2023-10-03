@@ -1,63 +1,41 @@
-<div
-  id="table"
-  class="
-    col
-    justify-content-center
-    container
-    bg-danger
-    text-center
-    text-white
-    margin-auto
-    p-0
-  "
->
+<div class="row mt-4">
 
-  <div
-    id="buttons"
-    class="
-      row
-    "
-  >
-    <button
-      class="
-        col
-        btn
-        btn-outline-secondary
-      "
-      [ngClass]="
-        { 'btn-dark': signIn }
-      "
-      (click)="onChangeSelection(true)"
-
-    >
-      Sign in
-    </button>
-    <button
-      class="
-        col
-        btn
-        btn-outline-secondary
-      "
-      [ngClass]="
-        { 'btn-dark': !signIn }
-      "
-      (click)="onChangeSelection(false)"
-    >
-      Sign up
-    </button>
+  <div class="col-3">
+    <shared-sidebar></shared-sidebar>
   </div>
 
-
-  <div
-    *ngIf="signIn then signin;
-    else signup"
-  >
+  <div class="col mt-2 text-center">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Gif</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <img
+              src="{{user.favGifUrl}}"
+              height="35"
+              width="35"
+              class="mt-3"
+            >
+          </td>
+          <td>
+            <button  aria-label="Mute" class= "btn btn-danger">
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <ng-template #signin>
-    <crud-users-sign-in></crud-users-sign-in>
-  </ng-template>
-  <ng-template #signup>
-    <crud-users-sign-up></crud-users-sign-up>
-  </ng-template>
 
 </div>

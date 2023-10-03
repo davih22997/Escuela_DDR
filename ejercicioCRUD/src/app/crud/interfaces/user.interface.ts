@@ -1,5 +1,11 @@
 import { Gif } from "src/app/gifs/interfaces/gifs.interfaces";
 
+export enum CreationState {
+  Created,
+  NotCreated,
+  WaitToCreate
+}
+
 export interface User {
   id:           string,
 
@@ -7,6 +13,7 @@ export interface User {
   name:         string,
   password:     string,
 
-  favGif:         Gif | undefined
+  favGifUrl:       string | undefined
 }
+
 

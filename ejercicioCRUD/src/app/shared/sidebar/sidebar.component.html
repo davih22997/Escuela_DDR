@@ -4,24 +4,40 @@
 <ul class="list-group">
 
   <li
-    routerLink="crud/gifs"
+    routerLink="/crud/tables"
+    routerLinkActive="active"
+    class="list-group-item"
+  >
+    Registro de usuarios
+  </li>
+  <li
+    routerLink="/crud/mydata"
     routerLinkActive="active"
     class="list-group-item"
   >
     Mis datos
   <li
-    routerLink="crud/gifs"
+    routerLink="/crud/gifs"
     routerLinkActive="active"
     class="list-group-item"
   >
     Gifs
   </li>
   <li
-    routerLink="crud/settings"
+    routerLink="/crud/settings"
     routerLinkActive="active"
     class="list-group-item"
   >
     Ajustes
+  </li>
+  <li
+    (click)="closeSesion()"
+    class="
+      list-group-item
+      list-group-item-danger
+    "
+  >
+    Cerrar sesión
   </li>
 
 </ul>

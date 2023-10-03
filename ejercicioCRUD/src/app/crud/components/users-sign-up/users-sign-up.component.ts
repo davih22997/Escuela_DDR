@@ -1,10 +1,10 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { User } from '../../interfaces/user.interface';
+import { CreationState, User } from '../../interfaces/user.interface';
 import {v4 as uuidv4} from 'uuid';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import * as crypto from 'crypto-js';
 
 @Component({
   selector: 'crud-users-sign-up',
@@ -13,14 +13,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   ]
 })
 
-@Injectable({providedIn: 'root'})
 export class UsersSignUpComponent implements OnInit {
   // VARIABLES
   // Public variables
   public user:string = "";
   public password:string = "";
   public email:string = "";
-  public created:boolean = true;
+  public creationState:CreationState = CreationState.WaitToCreate;
 
   public formData:FormGroup = new FormGroup({
     email: new FormControl(""),
@@ -40,23 +39,38 @@ export class UsersSignUpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userList = this.usersService.getUsers();
+    if (this.usersService.getSession)
+      this.usersService.openSession();
+
+    this.userList = this.usersService.getUsers;
+  }
+
+  // Getters
+  public get CreationState() {
+    return CreationState;
   }
 
   // Other methods
-
   // Creation
   public onClickSubmit(data:any):void {
-    this.user = data.user;
-    this.password = data.password;
-    this.email = data.email;
+    let created = this.checkIfCanBeCreated(
+      data.user,
+      data.email,
+      data.password
+    );
 
-    this.created = this.checkIfCreated();
-
-    if (!this.created) {
-      console.log("No se ha podido crear usuario")
+    if (!created) {
+      /*
+       TODO: Distinguir entre no creado por datos mal
+       y por datos duplicados
+      */
+      this.creationState = CreationState.NotCreated;
       return
     }
+
+    this.user = data.user;
+    this.email = data.email;
+    this.password = crypto.SHA512(data.password).toString();
 
     this.createAccount();
   }
@@ -68,41 +82,70 @@ export class UsersSignUpComponent implements OnInit {
       name:         this.user,
       password:     this.password,
 
-      favGif:         undefined
+      favGifUrl:    undefined
     }
 
     this.userList.push(newAccount);
-    this.usersService.userList = this.userList;
+    this.usersService.setUserList = this.userList;
 
     localStorage.setItem(
       'users',
       JSON.stringify(this.userList)
     );
+    this.creationState = CreationState.Created;
 
+    this.resetValues();
+  }
+
+  // Reset values
+  private resetValues() {
+    setTimeout(() => {
+      this.email = '';
+      this.user = '';
+      this.password = '';
+
+      this.formData = new FormGroup({
+        email: new FormControl(""),
+        user: new FormControl(""),
+        password: new FormControl("")
+      });
+    }, 250)
   }
 
   // Data validation
-  private checkIfCreated():boolean {
-    let res: boolean =
-      this.validateEmail() &&
-      this.validateUser() &&
-      this.validatePasswd();
+  private checkIfCanBeCreated(user:string, email:string, password:string):boolean {
+    let res:boolean = this.dataValidation(user, email, password);
+    res = res && ! this.duplicatedData(user, email);
 
     return res;
   }
 
-  private validateEmail(): boolean {
+  private dataValidation(user:string, email:string, password:string):boolean {
+    return this.validateUser(user) &&
+    this.validateEmail(email) &&
+    this.validatePasswd(password);
+  }
+
+  private validateEmail(email:string): boolean {
     const res: RegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    return res.test(String(this.email).toLowerCase());
+    return res.test(String(email).toLowerCase());
   }
 
-  private validateUser(): boolean {
+  private validateUser(user:string): boolean {
     const res: RegExp = /(\_|[a-z])([1-9]|[a-z]|\_)*/;
-    return res.test(String(this.user).toLowerCase());
+    return res.test(String(user).toLowerCase());
   }
 
-  private validatePasswd(): boolean {
-    return this.password.length >=4 ;
+  private validatePasswd(password:string): boolean {
+    return password.length >=4 ;
+  }
+
+  private duplicatedData(user:string, email:string):boolean {
+    return this.userList.some(
+      u =>
+      u.name === user ||
+      u.email === email
+    );
   }
 
 }

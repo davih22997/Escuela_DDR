@@ -8,7 +8,7 @@ const routes: Routes = [
       .then(m => m.CrudModule)
   },
   {
-    path: '*',
+    path: '**',
     redirectTo: 'crud'
   }
 ]

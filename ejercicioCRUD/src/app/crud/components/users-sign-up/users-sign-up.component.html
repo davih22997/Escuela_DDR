@@ -71,13 +71,17 @@ class="container
   </div>
 </form>
 
-<div
-  *ngIf="!created"
-  class = "row"
->
-  <p
-    class = "text-warning"
-  >
-  No pudo ser creado
-  </p>
-</div>
+<ng-container [ngSwitch]="creationState">
+  <div *ngSwitchCase="CreationState.NotCreated">
+    <p class = "text-warning">
+      El usuario no pudo ser creado
+    </p>
+  </div>
+
+  <div *ngSwitchCase="CreationState.Created">
+    <p class = "text-warning">
+      Usuario creado correctamente
+    </p>
+  </div>
+</ng-container>
+

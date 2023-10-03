@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, NgModule } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../interfaces/user.interface';
 
@@ -9,12 +10,24 @@ import { User } from '../../interfaces/user.interface';
   styles: [
   ],
 })
-export class UsersTableComponent {
+export class UsersTableComponent implements OnInit{
 
-  public signIn:boolean= true;
+  // VARIABLES
+  // Public variables
+  public userList: User[] = [];
 
-  public onChangeSelection(selection:boolean): void {
-    this.signIn = selection;
+  // METHODS
+  // Constructor & initialization
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private usersService:UsersService,
+    private router:Router
+  ) {}
+
+
+  ngOnInit(): void {
+    this.userList = this.usersService.getUsers;
   }
+
 
 }
