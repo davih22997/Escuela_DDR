@@ -7,5 +7,6 @@ export interface User {
   name:         string,
   password:     string,
 
-  favGif:         Gif
+  favGif:         Gif | undefined
 }
+

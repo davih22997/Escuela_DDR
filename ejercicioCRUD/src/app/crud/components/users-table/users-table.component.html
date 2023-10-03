@@ -1,0 +1,63 @@
+<div
+  id="table"
+  class="
+    col
+    justify-content-center
+    container
+    bg-danger
+    text-center
+    text-white
+    margin-auto
+    p-0
+  "
+>
+
+  <div
+    id="buttons"
+    class="
+      row
+    "
+  >
+    <button
+      class="
+        col
+        btn
+        btn-outline-secondary
+      "
+      [ngClass]="
+        { 'btn-dark': selected === 'Sign in' }
+      "
+      (click)="onChangeSelection('Sign in')"
+
+    >
+      Sign in
+    </button>
+    <button
+      class="
+        col
+        btn
+        btn-outline-secondary
+      "
+      [ngClass]="
+        { 'btn-dark': selected === 'Sign up' }
+      "
+      (click)="onChangeSelection('Sign up')"
+    >
+      Sign up
+    </button>
+  </div>
+
+
+  <div
+    *ngIf="selected === 'Sign in' then signin;
+    else signup"
+  >
+  </div>
+  <ng-template #signin>
+    <crud-users-sign-in></crud-users-sign-in>
+  </ng-template>
+  <ng-template #signup>
+    <crud-users-sign-up></crud-users-sign-up>
+  </ng-template>
+
+</div>

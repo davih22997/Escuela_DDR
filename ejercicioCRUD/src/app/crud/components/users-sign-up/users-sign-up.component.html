@@ -1,0 +1,83 @@
+<div
+id="title"
+class="
+  row
+  mt-4
+  justify-content-center
+  text-warning
+  fw-bold
+"
+>
+REGISTRO DE USUARIO
+</div>
+
+<form
+class="container
+  justify-content-center
+  p-4"
+[formGroup]="formData"
+(ngSubmit)="onClickSubmit(formData.value)"
+>
+  <div
+    class="row mt-1"
+  >
+
+  <p
+  class="col">
+    Usuario:
+  </p>
+  <input
+    type="text"
+    class="col"
+    formControlName="user"
+  >
+  </div>
+
+  <div
+    class="row mt-4"
+  >
+  <p
+    class="col">
+    Email:
+  </p>
+  <input
+    type="text"
+    class="col"
+    formControlName="email"
+  >
+  </div>
+
+  <div
+    class="row mt-4"
+  >
+  <p
+  class="col">
+    Contraseña:
+  </p>
+  <input
+    type="password"
+    class="col"
+    formControlName="password"
+  >
+  </div>
+
+  <div
+    class="row mt-4"
+  >
+  <input
+    type="submit"
+    class="col"
+  >
+  </div>
+</form>
+
+<div
+  *ngIf="created === false"
+  class = "row"
+>
+  <p
+    class = "text-warning"
+  >
+  No pudo ser creado
+  </p>
+</div>
