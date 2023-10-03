@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {ToolbarModule} from 'primeng/toolbar';
+import {SplitButtonModule} from 'primeng/splitbutton';
 import { ProductsRoutingModule } from './products-routing.module';
 import { BasicsPageComponent } from './pages/basics-page/basics-page.component';
 import { NumbersPageComponent } from './pages/numbers-page/numbers-page.component';
@@ -22,7 +24,9 @@ import { ToggleCasePipe } from './pipes/toggle-case.pipe';
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    PrimeNgModule
+    PrimeNgModule,
+    ToolbarModule,
+    SplitButtonModule
   ]
 })
 export class ProductsModule { }
