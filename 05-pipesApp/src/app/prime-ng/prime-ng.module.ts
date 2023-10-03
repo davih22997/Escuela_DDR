@@ -5,8 +5,9 @@ import { CardModule } from 'primeng/card';
 import { FieldsetModule } from 'primeng/fieldset';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelModule } from 'primeng/panel';
-import {ToolbarModule} from 'primeng/toolbar';
-import {SplitButtonModule} from 'primeng/splitbutton';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {SplitButtonModule} from 'primeng/splitbutton';
     FieldsetModule,
     PanelModule,
     ToolbarModule,
-    SplitButtonModule
+    SplitButtonModule,
+    TableModule
   ]
 })
 export class PrimeNgModule { }
