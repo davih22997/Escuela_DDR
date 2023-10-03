@@ -11,10 +11,10 @@ import { User } from '../../interfaces/user.interface';
 })
 export class UsersTableComponent {
 
-  public selected:string= "Sign in";
+  public signIn:boolean= true;
 
-  public onChangeSelection(selection:string): void {
-    this.selected = selection;
+  public onChangeSelection(selection:boolean): void {
+    this.signIn = selection;
   }
 
 }

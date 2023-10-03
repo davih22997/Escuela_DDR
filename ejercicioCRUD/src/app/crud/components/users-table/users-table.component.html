@@ -25,9 +25,9 @@
         btn-outline-secondary
       "
       [ngClass]="
-        { 'btn-dark': selected === 'Sign in' }
+        { 'btn-dark': signIn }
       "
-      (click)="onChangeSelection('Sign in')"
+      (click)="onChangeSelection(true)"
 
     >
       Sign in
@@ -39,9 +39,9 @@
         btn-outline-secondary
       "
       [ngClass]="
-        { 'btn-dark': selected === 'Sign up' }
+        { 'btn-dark': !signIn }
       "
-      (click)="onChangeSelection('Sign up')"
+      (click)="onChangeSelection(false)"
     >
       Sign up
     </button>
@@ -49,7 +49,7 @@
 
 
   <div
-    *ngIf="selected === 'Sign in' then signin;
+    *ngIf="signIn then signin;
     else signup"
   >
   </div>
