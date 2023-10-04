@@ -10,6 +10,7 @@ import { CrudRoutingModule } from "./crud-routing.module";
 import { UsersDataComponent } from './components/users-data/users-data.component';
 import { UsersGifsComponent } from './components/users-gifs/users-gifs.component';
 import { UsersSettingsComponent } from './components/users-settings/users-settings.component';
+import { UpperCasePipe } from './pipes/upper-case.pipe';
 
 @NgModule({
   declarations:[
@@ -20,6 +21,7 @@ import { UsersSettingsComponent } from './components/users-settings/users-settin
     UsersDataComponent,
     UsersGifsComponent,
     UsersSettingsComponent,
+    UpperCasePipe,
   ],
   imports: [
     FormsModule,
