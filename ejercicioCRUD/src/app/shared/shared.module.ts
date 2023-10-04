@@ -4,12 +4,14 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LazyImageComponent } from './lazy-image/lazy-image.component';
 
 @NgModule( {
   declarations: [
     SidebarComponent,
     SearchBoxComponent,
     LoadingSpinnerComponent,
+    LazyImageComponent
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     SidebarComponent,
+    LazyImageComponent,
     LoadingSpinnerComponent
   ],
   providers: []

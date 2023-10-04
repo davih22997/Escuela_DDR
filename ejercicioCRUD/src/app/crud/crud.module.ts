@@ -9,8 +9,10 @@ import { UsersInitialMenuComponent } from './components/users-initial-menu/users
 import { CrudRoutingModule } from "./crud-routing.module";
 import { UsersDataComponent } from './components/users-data/users-data.component';
 import { UsersGifsComponent } from './components/users-gifs/users-gifs.component';
-import { UsersSettingsComponent } from './components/users-settings/users-settings.component';
 import { UpperCasePipe } from './pipes/upper-case.pipe';
+import { HttpClientModule } from "@angular/common/http";
+import { GifsService } from "../gifs/services/gifs.service";
+import { GifsModule } from "../gifs/gifs.module";
 
 @NgModule({
   declarations:[
@@ -20,7 +22,6 @@ import { UpperCasePipe } from './pipes/upper-case.pipe';
     UsersInitialMenuComponent,
     UsersDataComponent,
     UsersGifsComponent,
-    UsersSettingsComponent,
     UpperCasePipe,
   ],
   imports: [
@@ -28,7 +29,9 @@ import { UpperCasePipe } from './pipes/upper-case.pipe';
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    CrudRoutingModule
+    CrudRoutingModule,
+    GifsModule,
+    HttpClientModule,
   ],
   exports: [
     UsersTableComponent,
@@ -36,6 +39,7 @@ import { UpperCasePipe } from './pipes/upper-case.pipe';
     UsersDataComponent
   ],
   providers: [
+    GifsService
   ]
 })
 

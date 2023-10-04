@@ -7,6 +7,7 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card/card.component';
+import { UsersService } from '../crud/services/users.service';
 
 
 
@@ -23,6 +24,9 @@ import { CardComponent } from './components/card/card.component';
   ],
   exports: [
     HomePageComponent,
+  ],
+  providers: [
+    UsersService
   ]
 })
 export class GifsModule { }

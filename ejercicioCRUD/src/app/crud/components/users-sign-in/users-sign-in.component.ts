@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../interfaces/user.interface';
 import * as crypto from 'crypto-js';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'crud-users-sign-in',
@@ -38,7 +39,7 @@ export class UsersSignInComponent {
 
   ngOnInit(): void {
     if (this.usersService.getSession)
-      this.usersService.chargeSession();
+      this.usersService.openSession();
 
     this.userList = this.usersService.getUsers;
   }
@@ -50,6 +51,14 @@ export class UsersSignInComponent {
 
     if (!res) {
       this.user = undefined;
+
+      Swal.fire({
+        title: 'Fallo en inicio de sesión',
+        text: 'Introduce datos correctos para iniciar sesión',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+
       return;
     }
 
@@ -60,11 +69,22 @@ export class UsersSignInComponent {
   private openSession() {
     this.isLoading = true;
 
+    Swal.fire({
+      title: 'Sesión iniciada correctamente',
+      text: 'Va a cargarse su sesión',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+
     setTimeout(() => {
       this.usersService.setCurrentUser = this.user!;
+      sessionStorage.setItem(
+        'user',
+        JSON.stringify(this.user)
+      );
       this.usersService.openSession();
       this.isLoading = false;
-    }, 1000);
+    }, 5000);
   }
 
   // Validation

@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Gif, SearchResponse } from '../interfaces/gifs.interfaces';
+import { UsersService } from 'src/app/crud/services/users.service';
 
 // const GIPHY_API_KEY = "4XvatTfT1gmoROr2wm8i68pLTJnyE6D3";
 
@@ -13,13 +14,16 @@ export class GifsService {
   private _apiKey: string = "4XvatTfT1gmoROr2wm8i68pLTJnyE6D3";
   private _serviceUrl: string = "https://api.giphy.com/v1/gifs";
 
-  constructor(private http:HttpClient) {
-    this.loadLocalStorage();
-    console.log('Gifs service loaded')
-
+  constructor(
+    private userService: UsersService,
+    private http:HttpClient
+  ) {
+    // this.loadLocalStorage();
+    // console.log('Gifs service loaded')
     if (this._tagsHistory.length === 0) return;
 
     this.searchTag(this._tagsHistory[0]);
+
 
   }
 
@@ -35,7 +39,7 @@ export class GifsService {
 
       this._tagsHistory.unshift(tag);
       this._tagsHistory = this._tagsHistory.splice(0,10);
-      this.saveLocalStorage();
+      // this.saveLocalStorage();
   }
 
   private saveLocalStorage():void {
@@ -65,6 +69,10 @@ export class GifsService {
         // console.log({gifs:this.gifList});
       });
 
+  }
+
+  addFavGif(url: string) {
+    this.userService.addFavGif(url);
   }
 
 }

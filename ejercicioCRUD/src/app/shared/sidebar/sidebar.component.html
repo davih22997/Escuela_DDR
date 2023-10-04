@@ -4,6 +4,13 @@
 <ul class="list-group">
 
   <li
+    routerLink="/crud/mydata"
+    routerLinkActive="active"
+    class="list-group-item"
+  >
+    Mis datos
+  </li>
+  <li
     routerLink="/crud/tables"
     routerLinkActive="active"
     class="list-group-item"
@@ -11,24 +18,11 @@
     Registro de usuarios
   </li>
   <li
-    routerLink="/crud/mydata"
-    routerLinkActive="active"
-    class="list-group-item"
-  >
-    Mis datos
-  <li
     routerLink="/crud/gifs"
     routerLinkActive="active"
     class="list-group-item"
   >
     Gifs
-  </li>
-  <li
-    routerLink="/crud/settings"
-    routerLinkActive="active"
-    class="list-group-item"
-  >
-    Ajustes
   </li>
   <li
     (click)="closeSesion()"

@@ -18,8 +18,12 @@ export class UsersService {
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
-    if (!localStorage.getItem('users')) return;
+    if (sessionStorage.getItem('user')) {
+      this.currentUser = JSON.parse(sessionStorage.getItem('user')!);
+      this.openSession();
+    }
 
+    if (!localStorage.getItem('users')) return;
     this.userList = JSON.parse(localStorage.getItem('users')!);
   }
 
@@ -47,20 +51,37 @@ export class UsersService {
 
 
   // Other methods
-  closeSession():void {
+  public closeSession():void {
     this.router.navigate([''], {relativeTo: this.activatedRoute});
     this.session = false;
+
+    sessionStorage.removeItem('user');
     this.currentUser = undefined;
   }
 
-  openSession(): void {
-    this.router.navigate(['/crud/tables'], {relativeTo: this.activatedRoute});
+  public openSession(): void {
+    this.router.navigate(['/crud/mydata'], {relativeTo: this.activatedRoute});
     this.session = true;
   }
-  public chargeSession() {
+
+  public addFavGif(url: string): void{
+    let user:User = this.currentUser!;
+    user.favGifUrl = url;
+    this.currentUser = user;
+
+    sessionStorage.setItem('user', JSON.stringify(this.currentUser!));
+
+    this.userList = this.filterUser(this.currentUser!);
+    this.userList.push(this.currentUser);
+
+    localStorage.setItem('users', JSON.stringify(this.userList))
   }
 
-  public exitSession() {
+  // Filtering
+  private filterUser(user:User) : User[]{
+    let filteredList:User[] = this.userList.filter (
+      u => u.id !== user.id
+    );
+    return filteredList;
   }
-
 }

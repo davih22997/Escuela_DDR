@@ -3,4 +3,41 @@
   <div class="col-3">
     <shared-sidebar></shared-sidebar>
   </div>
+
+  <div class="col text-center">
+    <h2>{{"Usuario " + currentUser.name | upperCase}}</h2>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">{{"id" | upperCase}}</th>
+          <th scope="col">{{"email" | upperCase}}</th>
+          <th scope="col">{{"favGif" | upperCase}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{currentUser.id}}</th>
+          <td>{{currentUser.email}}</td>
+          <td>
+            <img
+              class = "card-img-top animate__animated animate__fadeIn"
+              src={{currentUser.favGifUrl}}
+              alt="No hay gif"
+              height="32"
+              width="32"
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="btn btn-danger"
+      (click)="deleteAccount()"
+    >
+      <i class="bi bi-x-circle-fill"></i>
+       Eliminar cuenta
+    </button>
+  </div>
+
 </div>
