@@ -86,13 +86,23 @@ class="container
 
 <ng-container [ngSwitch]="creationState">
   <div *ngSwitchCase="CreationState.NotCreated">
-    <p class = "text-warning">
+    <p
+      class = "
+        text-danger
+        text-center
+        fw-bold
+      ">
       El usuario no pudo ser creado
     </p>
   </div>
 
   <div *ngSwitchCase="CreationState.Created">
-    <p class = "text-warning">
+    <p
+      class = "
+        text-success
+        text-center
+        fw-bold
+      ">
       Usuario creado correctamente
     </p>
   </div>
