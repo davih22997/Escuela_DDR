@@ -1,4 +1,4 @@
-#table {
+/* #table {
   width: 50%;
   height: 500px;
   margin:auto;
@@ -19,4 +19,16 @@
 
 #title {
   font-size: 3vw;
+} */
+
+section {
+  background: linear-gradient(to bottom, #ffff99 0%, #ff99cc 100%)
+}
+
+#b1 {
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+
+#b2 {
+  border-radius: 0rem 1rem 1rem 1rem;
 }

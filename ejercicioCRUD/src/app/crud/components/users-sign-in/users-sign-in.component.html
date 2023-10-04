@@ -4,7 +4,7 @@ class="
   row
   mt-4
   justify-content-center
-  text-warning
+  text-dark
   fw-bold
 "
 >
@@ -18,12 +18,17 @@ class="
   [formGroup]="formData"
   (ngSubmit)="onClickSubmit(formData.value)"
 >
+
+
   <div
-    class="row mt-1"
+    class="
+      row mt-1
+    "
   >
 
+  <div class="col-2"></div>
   <p
-  class="col">
+  class="col col-4">
     Usuario/Email:
   </p>
   <input
@@ -31,13 +36,15 @@ class="
     class="col"
     formControlName="input"
   >
+  <div class="col-2"></div>
   </div>
 
   <div
     class="row mt-4"
   >
+  <div class="col-2"></div>
   <p
-  class="col">
+  class="col col-4">
     Contraseña:
   </p>
   <input
@@ -45,15 +52,23 @@ class="
     class="col"
     formControlName="password"
   >
+  <div class="col-2"></div>
   </div>
 
   <div
     class="row mt-4"
   >
+  <div class = col></div>
   <input
     type="submit"
-    class="col"
+    class="
+      d-flex
+      justify-content-center
+      col
+      col-3
+    "
   >
+  <div class="col"></div>
 
   </div>
 

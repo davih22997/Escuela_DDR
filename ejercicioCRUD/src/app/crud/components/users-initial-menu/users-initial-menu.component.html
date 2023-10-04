@@ -1,63 +1,82 @@
-<div
-  id="table"
-  class="
-    col
-    justify-content-center
-    container
-    bg-danger
-    text-center
-    text-white
-    margin-auto
-    p-0
-  "
->
 
-  <div
-    id="buttons"
-    class="
-      row
-    "
-  >
-    <button
-      class="
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+<!--
+      <div
+       class="
         col
-        btn
-        btn-outline-secondary
-      "
-      [ngClass]="
-        { 'btn-dark': signIn }
-      "
-      (click)="onChangeSelection(true)"
+        justify-content-center
+        container
+        bg-danger
+        text-center
+        text-white
+        margin-auto
+        p-0
+        id="table"
+        >
+   " -->
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-light text-dark" style="border-radius: 1rem;">
+          <div
+            id="buttons"
+            class="
+              d-flex
+              justify-content-end
+            "
+          >
+            <button
+              id="b1"
+              class="
+                col
+                col-3
+                btn
+                btn-secondary
+              "
 
-    >
-      Sign in
-    </button>
-    <button
-      class="
-        col
-        btn
-        btn-outline-secondary
-      "
-      [ngClass]="
-        { 'btn-dark': !signIn }
-      "
-      (click)="onChangeSelection(false)"
-    >
-      Sign up
-    </button>
+              [ngClass]="
+                {
+                  'btn-dark': signIn,
+                }
+              "
+              (click)="onChangeSelection(true)"
+
+            >
+              Sign in
+            </button>
+            <button
+              id="b2"
+              class="
+                p-2
+                col
+                col-3
+                btn
+                btn-secondary
+              "
+              [ngClass]="
+                { 'btn-dark': !signIn }
+              "
+              (click)="onChangeSelection(false)"
+            >
+              Sign up
+            </button>
+          </div>
+
+
+          <div
+            *ngIf="signIn then signin;
+            else signup"
+          >
+          </div>
+          <ng-template #signin>
+            <crud-users-sign-in></crud-users-sign-in>
+          </ng-template>
+          <ng-template #signup>
+            <crud-users-sign-up></crud-users-sign-up>
+          </ng-template>
+        </div>
+      </div>
+    </div>
   </div>
 
-
-  <div
-    *ngIf="signIn then signin;
-    else signup"
-  >
-  </div>
-  <ng-template #signin>
-    <crud-users-sign-in></crud-users-sign-in>
-  </ng-template>
-  <ng-template #signup>
-    <crud-users-sign-up></crud-users-sign-up>
-  </ng-template>
-
-</div>
+</section>

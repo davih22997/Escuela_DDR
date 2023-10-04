@@ -4,7 +4,7 @@ class="
   row
   mt-4
   justify-content-center
-  text-warning
+  text-dark
   fw-bold
 "
 >
@@ -22,8 +22,9 @@ class="container
     class="row mt-1"
   >
 
+  <div class="col-2"></div>
   <p
-  class="col">
+  class="col col-4">
     Usuario:
   </p>
   <input
@@ -31,13 +32,15 @@ class="container
     class="col"
     formControlName="user"
   >
+  <div class="col-2"></div>
   </div>
 
   <div
     class="row mt-4"
   >
+  <div class="col-2"></div>
   <p
-    class="col">
+    class="col col-4">
     Email:
   </p>
   <input
@@ -45,13 +48,15 @@ class="container
     class="col"
     formControlName="email"
   >
+  <div class="col-2"></div>
   </div>
 
   <div
     class="row mt-4"
   >
+  <div class="col-2"></div>
   <p
-  class="col">
+  class="col col-4">
     Contraseña:
   </p>
   <input
@@ -59,15 +64,23 @@ class="container
     class="col"
     formControlName="password"
   >
+  <div class="col-2"></div>
   </div>
 
   <div
     class="row mt-4"
   >
+  <div class="col"></div>
   <input
     type="submit"
-    class="col"
+    class="
+      d-flex
+      justify-content-center
+      col
+      col-3
+    "
   >
+  <div class="col"></div>
   </div>
 </form>
 
