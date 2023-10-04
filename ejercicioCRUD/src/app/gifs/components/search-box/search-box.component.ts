@@ -1,5 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { GifsService } from '../../services/gifs.service';
+import { Subject, Subscription, debounceTime } from 'rxjs';
+
 
 @Component({
   selector: 'gifs-search-box',
@@ -8,23 +10,39 @@ import { GifsService } from '../../services/gifs.service';
     <input type="text"
       class="form-control mb-2"
       placeholder="Buscar gifs..."
-      (keyup.enter)="searchTag()"
+      (keyup)="onKeyPress(txtTagInput.value)"
       #txtTagInput
     >
   `
 })
-export class SearchBoxComponent {
+export class SearchBoxComponent implements OnInit, OnDestroy {
+
+  private debouncer: Subject<string> = new Subject<string>();
+  private debouncerSubscription?: Subscription;
 
   constructor(private gifsService:GifsService){ }
+  ngOnInit(): void {
+    this.gifsService.quitGifsPage();
+    this.debouncerSubscription = this.debouncer
+    .pipe(
+      debounceTime(300)
+      )
+      .subscribe(value => {
+        this.searchTag(value);
+        if (value === "")
+          this.gifsService.quitGifsPage();
+      });
+  }
 
-  @ViewChild('txtTagInput')
-  public tagInput!: ElementRef<HTMLInputElement>;
+  ngOnDestroy(): void {
+    this.debouncerSubscription?.unsubscribe();
+  }
 
-  searchTag() {
-    const newTag = this.tagInput.nativeElement.value;
+  searchTag(value:string) {
+    this.gifsService.searchTag(value);
+  }
 
-    this.gifsService.searchTag(newTag);
-
-    this.tagInput.nativeElement.value = '';
+  onKeyPress(searchTerm: string) {
+    this.debouncer.next(searchTerm);
   }
 }
