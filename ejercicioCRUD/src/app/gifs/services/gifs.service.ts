@@ -22,7 +22,6 @@ export class GifsService {
 
   }
 
-
   // async searchTag(tag: string):Promise<void> {
   searchTag(tag: string):void {
     if (tag.length === 0) return;
@@ -37,7 +36,6 @@ export class GifsService {
       .subscribe(resp => {
 
         this.gifList = resp.data;
-        // console.log({gifs:this.gifList});
       });
 
   }

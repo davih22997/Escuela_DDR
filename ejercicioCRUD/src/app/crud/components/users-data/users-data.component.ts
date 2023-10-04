@@ -26,6 +26,11 @@ export class UsersDataComponent implements OnInit {
     return this.usersService.getCurrentUser!;
   }
 
+  chargeLink(link: string | undefined) {
+    if (link)
+      window.open(link);
+  }
+
   deleteAccount() {
     console.log("Pulsaste para eliminar tu propia cuenta");
 
