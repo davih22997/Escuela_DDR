@@ -80,8 +80,13 @@ export class UsersTableComponent implements OnInit{
       }
   })
 
-
 }
+
+  chargeLink(link: string | undefined) {
+    if (link)
+      window.open(link);
+  }
+
   private filterUser(user:User) : User[]{
     let filteredList:User[] = this.userList.filter (
       u => u.id !== user.id
