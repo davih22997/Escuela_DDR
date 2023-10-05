@@ -1,0 +1,7 @@
+
+#gif:hover {
+  transition: transform .2s;
+  position: absolute;
+
+  transform:translate(-300%, 50%) scale(12);
+}

@@ -84,7 +84,7 @@ export class UsersSignInComponent {
       );
       this.usersService.openSession();
       this.isLoading = false;
-    }, 5000);
+    }, 3000);
   }
 
   // Validation

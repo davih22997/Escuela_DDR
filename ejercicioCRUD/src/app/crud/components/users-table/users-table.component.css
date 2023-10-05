@@ -1,22 +1,13 @@
-/* #table {
-  width: 50%;
-  height: 500px;
-  margin:auto;
-  border:5px ridge black;
-  padding: 10px;
+.delete:hover {
+  background-color: darkred;
 }
 
-#buttons{
-  margin:0 auto;
-  width: 100%;
-  background-color: white;
+
+
+#gif:hover {
+  transition: transform .2s;
+  position: absolute;
+
+  transform:translate(-300%, 200%) scale(12);
 }
 
-#buttons > button {
-  border-top: 0px;
-  border-radius: 0px 0px 5px 2px;
-}
-
-#title {
-  font-size: 3vw;
-} */

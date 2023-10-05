@@ -5,9 +5,11 @@ import { User } from '../../interfaces/user.interface';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-users-data',
+  selector: 'crud-users-data',
   templateUrl: './users-data.component.html',
-  styleUrls: []
+  styleUrls: [
+    './users-data.component.css'
+  ]
 })
 export class UsersDataComponent implements OnInit {
 

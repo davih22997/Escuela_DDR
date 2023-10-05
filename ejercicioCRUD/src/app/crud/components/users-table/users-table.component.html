@@ -23,18 +23,29 @@
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
             <td>
-              <img
-                src={{user.favGifUrl}}
-                alt='No hay gif'
-                height="32"
-                width="32"
-                (click)="chargeLink(user.favGifUrl)"
-              >
+              <div
+                class="
+                  justify-content-center
+                  align-items-center
+                  "
+                >
+
+                <img
+                  *ngIf="user.favGifUrl"
+                  id="gif"
+                  src={{user.favGifUrl}}
+                  style="
+                    max-width: 32px;
+                    max-height: 32px;
+                  "
+                  (click)="chargeLink(user.favGifUrl)"
+                >
+              </div>
             </td>
             <td>
               <button
                 aria-label="Mute"
-                class= "btn btn-danger"
+                class= "delete btn btn-danger"
                 (click)="deleteUser(user)"
               >
                 <i class="bi bi-x-circle-fill"></i>

@@ -5,6 +5,9 @@ import { GifsService } from '../../services/gifs.service';
 @Component({
   selector: 'gifs-card',
   templateUrl: './card.component.html',
+  styleUrls: [
+    './card.component.css'
+  ]
 })
 export class CardComponent implements OnInit {
 

@@ -20,14 +20,19 @@
           <th scope="row">{{currentUser.id}}</th>
           <td>{{currentUser.email}}</td>
           <td>
-            <img
-              class = "card-img-top animate__animated animate__fadeIn"
-              src={{currentUser.favGifUrl}}
-              alt="No hay gif"
-              height="32"
-              width="32"
-              (click)="chargeLink(currentUser.favGifUrl)"
-            >
+            <div class="justify-content-center align-items-center">
+              <img
+                *ngIf="currentUser.favGifUrl"
+                id="gif"
+                class = "card-img-top animate__animated animate__fadeIn"
+                src={{currentUser.favGifUrl}}
+                style="
+                  max-width: 32px;
+                  max-height: 32px;
+                "
+                (click)="chargeLink(currentUser.favGifUrl)"
+              >
+            </div>
           </td>
         </tr>
       </tbody>
