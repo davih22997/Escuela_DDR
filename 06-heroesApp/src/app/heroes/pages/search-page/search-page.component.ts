@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-search-page',
@@ -20,6 +21,10 @@ export class SearchPageComponent {
 
 
   searchHero() {
+
+    this.searchInput.valueChanges
+      .subscribe(value => console.log(value))
+
     const value: string = this.searchInput.value || '';
     this.HeroesService.getSuggestions(value)
       .subscribe(heroes => this.heroes = heroes);
