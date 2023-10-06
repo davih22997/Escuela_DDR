@@ -1,10 +1,14 @@
 # Escuela_DDR
 
-## Proyecto de prueba de Angular
+## Angular projects' part
 
 Visit our example website on: 
 - https://fascinating-tarsier-8b68ae.netlify.app/
 - https://davih22997.github.io/Escuela_DDR/
+
+### Project Organization:
+- `ejercicioCrud`: A project done by my own.
+- Other projects are from the Udemy's Angular course.
 
 # Bases
 
