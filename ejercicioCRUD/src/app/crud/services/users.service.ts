@@ -64,8 +64,11 @@ export class UsersService {
     this.session = true;
   }
 
-  public addFavGif(url: string): void{
+  public addFavGif(url: string): boolean{
     let user:User = this.currentUser!;
+
+    if (user.favGifUrl === url) return false;
+
     user.favGifUrl = url;
     this.currentUser = user;
 
@@ -75,6 +78,7 @@ export class UsersService {
     this.userList.push(this.currentUser);
 
     localStorage.setItem('users', JSON.stringify(this.userList))
+    return true;
   }
 
   // Filtering

@@ -40,8 +40,8 @@ export class GifsService {
 
   }
 
-  addFavGif(url: string) {
-    this.userService.addFavGif(url);
+  addFavGif(url: string) :boolean {
+    return this.userService.addFavGif(url);
   }
 
   public quitGifsPage() {
