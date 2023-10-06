@@ -24,18 +24,18 @@ export class UsersDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Getters
   get currentUser():User {
     return this.usersService.getCurrentUser!;
   }
 
+  // Other function
   chargeLink(link: string | undefined) {
     if (link)
       window.open(link);
   }
 
   deleteAccount() {
-    console.log("Pulsaste para eliminar tu propia cuenta");
-
     let swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -65,7 +65,6 @@ export class UsersDataComponent implements OnInit {
         localStorage.setItem('users', JSON.stringify(this.usersService.getUsers));
         this.usersService.closeSession();
       } else if (
-        /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalWithBootstrapButtons.fire(
@@ -78,7 +77,7 @@ export class UsersDataComponent implements OnInit {
 
   }
 
-
+  // Filtering
   private filterUser(user:User) : User[]{
     let filteredList:User[] = this.usersService.getUsers.filter (
       u => u.id !== user.id

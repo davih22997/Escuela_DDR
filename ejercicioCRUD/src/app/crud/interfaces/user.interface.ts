@@ -1,5 +1,3 @@
-import { Gif } from "src/app/gifs/interfaces/gifs.interfaces";
-
 export enum CreationState {
   Created,
   NotCreated,

@@ -60,10 +60,6 @@ export class UsersSignUpComponent implements OnInit {
     );
 
     if (!created) {
-      /*
-       TODO: Distinguir entre no creado por datos mal
-       y por datos duplicados
-      */
       this.creationState = CreationState.NotCreated;
       return
     }

@@ -12,18 +12,24 @@ import Swal from 'sweetalert2';
 })
 export class CardComponent implements OnInit {
 
+  // VARIABLES
 
-  constructor(private gifService: GifsService) {}
+  // Public variables
   @Input()
   public gif!: Gif;
 
   @Input()
   public currentUser!: User;
 
+  // METHODS
+  // Constructor & initialization
+  constructor(private gifService: GifsService) {}
+
   ngOnInit(): void {
     if (!this.gif) throw new Error('Gif property is required');
   }
 
+  // Other methods
   addFavGif(url:string):void {
     if (this.gifService.addFavGif(url)) {
       Swal.fire({

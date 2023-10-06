@@ -6,26 +6,26 @@ import { UsersService } from 'src/app/crud/services/users.service';
 @Injectable({providedIn: 'root'})
 export class GifsService {
 
+  // VARIABLES
+  // Public variables
   public gifList: Gif[] = [];
 
+  // Private variables
   private _apiKey: string = "4XvatTfT1gmoROr2wm8i68pLTJnyE6D3";
   private _serviceUrl: string = "https://api.giphy.com/v1/gifs";
 
+
+  // METHODS
+  // Constructor
   constructor(
     private userService: UsersService,
     private http:HttpClient
   ) {  }
 
-
-  private organizeHistory(tag:string) {
-    tag = tag.toLowerCase();
-
-  }
-
-  // async searchTag(tag: string):Promise<void> {
+  // Data functions
   searchTag(tag: string):void {
     if (tag.length === 0) return;
-    this.organizeHistory(tag);
+    tag = tag.toLowerCase();
 
     const params = new HttpParams()
       .set('api_key', this._apiKey)

@@ -17,9 +17,13 @@ import { Subject, Subscription, debounceTime } from 'rxjs';
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
 
+  // VARIABLES
+  // Private variables
   private debouncer: Subject<string> = new Subject<string>();
   private debouncerSubscription?: Subscription;
 
+  // METHODS
+  // Constructor, initialization & destroy
   constructor(private gifsService:GifsService){ }
   ngOnInit(): void {
     this.gifsService.quitGifsPage();
@@ -38,6 +42,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     this.debouncerSubscription?.unsubscribe();
   }
 
+  // Other methods
   searchTag(value:string) {
     this.gifsService.searchTag(value);
   }

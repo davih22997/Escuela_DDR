@@ -82,6 +82,7 @@ export class UsersTableComponent implements OnInit{
 
 }
 
+  // Other functions
   chargeLink(link: string | undefined) {
     if (link)
       window.open(link);
