@@ -21,3 +21,6 @@
 ## Typescript
 ### Secciones:
 - Secciones 22-38 completas
+
+## Angular
+-> See `angularApp` branch
