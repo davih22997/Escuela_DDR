@@ -8,13 +8,30 @@ export class EmailValidator implements AsyncValidator {
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     const email = control.value;
-    console.log({email})
 
-    return of ({
-      emailTaken: true
+    const httpCallObservable = new Observable<ValidationErrors | null>( (subscriber) => {
+
+      console.log({email})
+
+      if (email === 'fernando@google.com') {
+        subscriber.next({emailTaken:true});
+        subscriber.complete();
+      }
+
+      subscriber.next(null);
+      subscriber.complete();
+      // return;
     }).pipe(
-      delay(2000)
+      delay(3000)
     )
+
+    return httpCallObservable;
+
+    // return of ({
+    //   emailTaken: true
+    // }).pipe(
+    //   delay(2000)
+    // )
   }
 
 
@@ -22,3 +39,11 @@ export class EmailValidator implements AsyncValidator {
 
 
 
+    // return this.http.get(`https://miservicio.com`)
+    //           .pipe(
+    //               .map(resp => {
+    //                 return (resp.length === 0)
+    //                   ? null
+    //                   : {emailTaken: true}
+    //               })
+    //           )
