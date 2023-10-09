@@ -8,7 +8,7 @@ const routes: Routes = [
       .then(m => m.ReactiveModule),
   },
   {
-    path: 'reactive',
+    path: 'auth',
     loadChildren: () => import('./auth/auth.module')
       .then(m => m.AuthModule),
   },
