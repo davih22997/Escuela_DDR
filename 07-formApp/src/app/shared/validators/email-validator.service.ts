@@ -33,17 +33,14 @@ export class EmailValidator implements AsyncValidator {
     //   delay(2000)
     // )
   }
-
-
 }
 
 
-
-    // return this.http.get(`https://miservicio.com`)
-    //           .pipe(
-    //               .map(resp => {
-    //                 return (resp.length === 0)
-    //                   ? null
-    //                   : {emailTaken: true}
-    //               })
-    //           )
+// return this.http.get(`https://miservicio.com`)
+//           .pipe(
+//               .map(resp => {
+//                 return (resp.length === 0)
+//                   ? null
+//                   : {emailTaken: true}
+//               })
+//           )
