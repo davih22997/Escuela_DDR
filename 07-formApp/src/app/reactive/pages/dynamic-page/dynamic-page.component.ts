@@ -53,17 +53,18 @@ export class DynamicPageComponent {
     return null;
   }
 
-
-
+  onDeleteFavorite(index: number):void {
+    this.favoriteGames.removeAt(index);
+  }
 
   onSubmit():void{
+    console.log(this.myForm.value);
 
     if (this.myForm.invalid) {
       this.myForm.markAllAsTouched();
       return;
     }
 
-    console.log(this.myForm.value);
     this.myForm.reset();
   }
 
