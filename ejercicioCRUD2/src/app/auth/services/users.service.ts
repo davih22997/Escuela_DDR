@@ -16,7 +16,7 @@ export class UsersService {
   }
 
   addUser(user:User):Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/users/${user.id}`, user);
+    return this.http.post<User>(`${this.baseUrl}/users/`, user);
   }
 
   updateUser(user: User) : Observable<User> {
@@ -26,7 +26,7 @@ export class UsersService {
   }
 
   deleteUser(user: User) : Observable<boolean> {
-    return this.http.delete(`${ this.baseUrl}/users/${user.nick}`)
+    return this.http.delete(`${ this.baseUrl}/users/${user.id}`)
       .pipe(
         map(resp => true),
         catchError(err => of(false)),
