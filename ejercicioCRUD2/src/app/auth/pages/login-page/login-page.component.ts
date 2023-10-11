@@ -19,7 +19,15 @@ export class LoginPageComponent {
   ) {}
 
   onLogin(): void{
-    console.log("hola");
+    console.log("logueado");
+    /* TODO:
+    1. Comprobar nick / email
+    2. Comprobar contraseña
+
+    Si todo OK -> Logear
+    */
+
+
     // this.authService.login('fernando@gmail.com', '123456')
     //   .subscribe(user => {
 

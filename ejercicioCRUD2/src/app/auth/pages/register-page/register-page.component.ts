@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EmailValidator } from 'src/app/shared/validators/email-validator.service';
+import { UserValidator } from 'src/app/shared/validators/user-validator.service';
 import { ValidatorsService } from 'src/app/shared/validators/validator.service';
 
 @Component({
@@ -14,6 +16,8 @@ import { ValidatorsService } from 'src/app/shared/validators/validator.service';
 })
 export class RegisterPageComponent {
 
+  // VARIABLES
+  // Public variables
   public myForm: FormGroup = this.fb.group({
     name: [
       '',
@@ -26,7 +30,7 @@ export class RegisterPageComponent {
       '',
       [
         Validators.required,
-        Validators.pattern(this.validatorsService.namePattern)
+        Validators.pattern(this.validatorsService.surnamePattern)
       ]
     ],
     nick: [
@@ -35,6 +39,9 @@ export class RegisterPageComponent {
         Validators.required,
         Validators.pattern(this.validatorsService.nickPattern),
         Validators.minLength(4)
+      ],
+      [
+        new UserValidator()
       ]
     ],
     email: [
@@ -42,6 +49,9 @@ export class RegisterPageComponent {
       [
         Validators.required,
         Validators.pattern(this.validatorsService.emailPattern)
+      ],
+      [
+        new EmailValidator()
       ]
     ],
     password: [
@@ -65,23 +75,28 @@ export class RegisterPageComponent {
   }
   );
 
+  // METHODS
+  // Constructor
   constructor (
     private router:Router,
     private fb:FormBuilder,
     private validatorsService: ValidatorsService,
   ) {}
 
+  // Submit
+  public onSubmit():void {
+    this.myForm.markAllAsTouched();
+  }
+
+  // Validation & errors
   public isValidField(field:string): boolean | null {
     return this.validatorsService.isValidField(this.myForm, field);
   }
 
-  public onSubmit():void {
-    console.log("submit");
-    this.myForm.markAllAsTouched();
-  }
 
   public getFieldError(field:string) :string | null {
     const errors = this.myForm.controls[field].errors || {}
+    console.log(errors);
     for (const key of Object.keys(errors)) {
       switch (key) {
         case 'required':
@@ -91,7 +106,14 @@ export class RegisterPageComponent {
         case 'notEqual':
           return 'Debe coincidir con la contraseña introducida' ;
         case 'pattern':
-          return 'No tiene un formato adecuado'
+          return 'No tiene un formato adecuado';
+        case 'userTaken':
+          return 'El usuario ya registrado.'
+        case 'emailTaken':
+          return 'Email ya registrado.'
+        default:
+          console.log(key)
+          return "";
       }
     }
     return null;

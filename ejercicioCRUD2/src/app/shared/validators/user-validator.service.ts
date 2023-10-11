@@ -4,29 +4,27 @@ import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/form
 import { Observable, delay, of } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class EmailValidator implements AsyncValidator {
+export class UserValidator implements AsyncValidator {
 
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
-    const email = control.value;
+    const user = control.value;
 
     const httpCallObservable = new Observable<ValidationErrors | null>( (subscriber) => {
 
-      // TODO: Comprobar email en BBDD
 
-      console.log({email})
+      // TODO: Comprobar user en BBDD
+      console.log({UserValue: user})
 
-      if (email === 'fernando@google.com') {
-        subscriber.next({emailTaken:true});
+      if (user === 'fernando@google.com') {
+        subscriber.next({userTaken:true});
         subscriber.complete();
       }
 
       subscriber.next(null);
       subscriber.complete();
       // return;
-    }).pipe(
-      delay(3000)
-    )
+    })
 
     return httpCallObservable;
 

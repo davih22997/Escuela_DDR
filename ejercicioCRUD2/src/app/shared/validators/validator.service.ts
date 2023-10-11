@@ -1,17 +1,23 @@
 
 import { Injectable } from '@angular/core';
-import { FormControl, ValidationErrors, FormGroup } from '@angular/forms';
+import { ValidationErrors, FormGroup } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class ValidatorsService {
 
+  // VARIABLES
+  // Public variables
   public namePattern: string = '([a-zA-Z]+)';
+  public surnamePattern: string = '([a-zA-Z]+([ ][a-zA-Z]+)?)'
   public nickPattern: string = '([_a-zA-Z]([0-9]|[_a-zA-Z])+)'
   public firstNameAndLastnamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
   public emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
+  // METHODS
+  // Constructor
   constructor() { }
 
+  // Validation
   public isValidField(form: FormGroup, field: string) {
     return form.controls[field].errors &&
       form.controls[field].touched;
