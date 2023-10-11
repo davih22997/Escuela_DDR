@@ -1,0 +1,9 @@
+.container {
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+
+#title {
+  font-weight: bold;
+}

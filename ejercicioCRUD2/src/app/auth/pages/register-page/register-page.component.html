@@ -1,0 +1,121 @@
+
+<form
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit()"
+  autocomplete="off"
+  class="container"
+>
+  <div class="flex flex-column p-5">
+    <span id="title" class="text-lg mb-4 text-center">REGISTRO</span>
+
+      <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Nick de usuario"
+          formControlName="nick"
+        >
+        <mat-error
+          *ngIf="isValidField('nick')"
+          class="row form-text text-danger"
+        >
+          {{getFieldError('nick')}}
+        </mat-error>
+      </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Nombre de usuario"
+        formControlName="name"
+      >
+      <mat-error
+        *ngIf="isValidField('name')"
+        class="row form-text text-danger"
+      >
+        {{getFieldError('name')}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Apellidos</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Apellidos de usuario"
+        formControlName="surname"
+      >
+      <mat-error
+        *ngIf="isValidField('surname')"
+        class="row form-text text-danger"
+      >
+        {{getFieldError('surname')}}
+    </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Email"
+        formControlName="email"
+      >
+      <mat-error
+        *ngIf="isValidField('email')"
+        class="row form-text text-danger"
+      >
+        {{getFieldError('email')}}
+    </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Contraseña"
+        formControlName="password"
+      >
+      <mat-error
+        *ngIf="isValidField('password')"
+        class="row form-text text-danger"
+      >
+        {{getFieldError('password')}}
+    </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirmar contraseña</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Confirmar contraseña"
+        formControlName="password2"
+      >
+      <mat-error
+        *ngIf="isValidField('password2')"
+        class="row form-text text-danger"
+      >
+        {{getFieldError('password2')}}
+    </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-button
+      mat-flat-button
+      color="primary"
+      type ="submit"
+    >
+      <mat-icon>save</mat-icon>
+      Crear cuenta
+    </button>
+
+    <div class="flex justify-content-end mt-5">
+      <a routerLink="/auth/login">¿Ya tienes cuenta?</a>
+    </div>
+
+  </div>
+</form>
