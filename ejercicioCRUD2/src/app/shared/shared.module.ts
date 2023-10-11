@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Error404PageComponent } from "./pages/error404-page/error404-page.component";
+import { UsersService } from "../auth/services/users.service";
 
 @NgModule({
   declarations: [
@@ -8,6 +9,9 @@ import { Error404PageComponent } from "./pages/error404-page/error404-page.compo
   imports: [],
   exports: [
     Error404PageComponent,
+  ],
+  providers: [
+    UsersService
   ]
 })
 

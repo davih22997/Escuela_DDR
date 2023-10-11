@@ -5,8 +5,73 @@
       "name": "user",
       "surname": "user",
       "email": "user@user.com",
-      "password": "123456",
+      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
+      "admin": false
+    },
+    {
+      "id": "admin",
+      "name": "admin",
+      "surname": "admin",
+      "email": "admin@admin.com",
+      "password": "92f39f7f2a869838cd5085e6f17fc82109bcf98cd62a47cbc379e38de80bbc0213a23cee6e4a13de6caae0add8a390272d6f0883c274320b1ff60dbcfc6dd750",
+      "admin": false
+    },
+    {
+      "id": "hola",
+      "name": "hola",
+      "surname": "hola",
+      "email": "hola@hola.es",
+      "password": "b49a124ed48256b7e1e62bfb55b83b8f0270241753d46b37345c588012e912294e153df0ffbfef0e449c42d9f92e0c2ecc02860c8e2398041f3b1633b99d699b",
+      "admin": false
+    },
+    {
+      "id": "holi",
+      "name": "holi",
+      "surname": "holi",
+      "email": "holi@holi.es",
+      "password": "9ab9b4a659c8fd8858d8351cb64f27f3332c74ca319899b9d581657bc511f598cc4a26c72f0ec1780105ed526751abf4f97fa6ec4ca98b1cdf96f24b966531f4",
+      "admin": false
+    },
+    {
+      "id": "chao",
+      "name": "chao",
+      "surname": "chao",
+      "email": "chao@chao.es",
+      "password": "aef43c8757d43ba738f5f1a538db3494c3bd0336cc15336f769219b016253a80ebec02f36088de38ffd3348bd49c44162612ba850939e99637fd6193f563081e",
+      "admin": false
+    },
+    {
+      "id": "holiwi",
+      "name": "holiwi",
+      "surname": "holiwi",
+      "email": "holiwi@hola.es",
+      "password": "ec6d1f1507881d47fb5a8b46de6920c7e2a0c6f63d5a25d67a19328cbd64e1a345c4f6399d00b83e3b66f6865bf43e5e336b26c739478208f93d95ddd4450765",
+      "admin": false
+    },
+    {
+      "id": "chaito",
+      "name": "chaito",
+      "surname": "chaito",
+      "email": "chaito@chao.es",
+      "password": "1a77473f435d5456af99cb50a7ab11ab5b49e3b11f0c3b3c4f2ff3446af8063bf6ffaeee87df64b5ca32435dd1b851b5f755537c2fec8bb02db61127d03164e8",
+      "admin": false
+    },
+    {
+      "id": "usuario",
+      "name": "usuario",
+      "surname": "user",
+      "email": "usuario@user.com",
+      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
+      "admin": false
+    },
+    {
+      "id": "davidDR",
+      "name": "David",
+      "surname": "Diaz Roldan",
+      "email": "david.diazr@viewnext.com",
+      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
       "admin": false
     }
-  ]
+  ],
+  "users2": []
 }

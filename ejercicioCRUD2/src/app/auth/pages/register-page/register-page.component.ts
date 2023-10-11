@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmailValidator } from 'src/app/shared/validators/email-validator.service';
@@ -19,10 +19,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     './register-page.component.css'
   ]
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent implements OnInit {
 
   // VARIABLES
   // Public variables
+  @Output()
+  public usersEvent = new EventEmitter<User[]>();
+  private users:User[] = [];
+
   public myForm: FormGroup = this.fb.group({
     name: [
       '',
@@ -46,7 +50,7 @@ export class RegisterPageComponent {
         Validators.minLength(4)
       ],
       [
-        new UserValidator()
+        this.userValidator
       ]
     ],
     email: [
@@ -56,7 +60,7 @@ export class RegisterPageComponent {
         Validators.pattern(this.validatorsService.emailPattern)
       ],
       [
-        new EmailValidator()
+        this.emailValidator
       ]
     ],
     password: [
@@ -84,41 +88,50 @@ export class RegisterPageComponent {
   // Constructor
   constructor (
     private router:Router,
+    private userValidator: UserValidator,
+    private emailValidator: EmailValidator,
     private fb:FormBuilder,
     private uService: UsersService,
     private validatorsService: ValidatorsService,
     private snackbar:MatSnackBar
   ) {}
 
+  ngOnInit(): void {
+    this.uService.getUsers()
+      .subscribe(users => {
+        this.users = users
+        this.usersEvent.emit(this.users);
+      });
+  }
+
   // Submit
   public onSubmit():void {
     this.myForm.markAllAsTouched();
+    console.log(this.users);
 
     if (!this.myForm.valid)
       return;
 
-    // Si el formulario es válido
-
-
+    // If form is valid
     const user:User = <User> {
       id: this.myForm.get('nick')!.value,
       name: this.myForm.get('name')!.value,
       surname: this.myForm.get('surname')!.value,
       email: this.myForm.get('email')!.value,
-      password: this.myForm.get('password')!.value,
+      password: crypto.SHA512(this.myForm.get('password')!.value).toString(),
       admin:false
     }
 
+    // We add the user
     this.addUser(user);
-    // this.myForm.reset();
-
+    // And reset form
+    this.myForm.reset();
   }
 
-  // Validation & errors
+  // Validation & checking errors
   public isValidField(field:string): boolean | null {
     return this.validatorsService.isValidField(this.myForm, field);
   }
-
 
   public getFieldError(field:string) :string | null {
     const errors = this.myForm.controls[field].errors || {}
@@ -133,12 +146,9 @@ export class RegisterPageComponent {
         case 'pattern':
           return 'No tiene un formato adecuado';
         case 'userTaken':
-          return 'El usuario ya registrado.'
+          return 'Usuario ya registrado.'
         case 'emailTaken':
           return 'Email ya registrado.'
-        default:
-          console.log(key)
-          return "";
       }
     }
     return null;
@@ -152,6 +162,7 @@ export class RegisterPageComponent {
       })
   }
 
+  // Show message
   showSnackbar(message:string):void {
     this.snackbar.open(message, 'done', {
       duration: 2500,
