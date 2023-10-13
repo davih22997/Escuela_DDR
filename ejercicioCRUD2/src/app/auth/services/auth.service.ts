@@ -31,9 +31,6 @@ export class AuthService {
 
     const token:User = JSON.parse(localStorage.getItem('token')!);
 
-    console.log("Usuario: ")
-    console.log({token});
-
     return this.http.get<User>(`${this.baseUrl}/users/${token.id}`)
       .pipe(
         tap(u => this.user = u),

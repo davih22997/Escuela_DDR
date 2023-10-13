@@ -47,17 +47,15 @@ export class LoginPageComponent implements OnInit {
     const user:User|null = this.getUser();
 
     this.incorrectUser = !user;
-    this.incorrectPasswd = !this.incorrectUser && this.checkPassword(user);
-      console.log("contraseña incorrecta")
-    this.incorrectUser = !user || !this.checkPassword(user)
-    if (this.incorrectUser) {
+    this.incorrectPasswd = !this.checkPassword(user);
+
+    if (this.incorrectUser || this.incorrectPasswd) {
       console.log("Usuario incorrecto")
       return;
     }
 
     console.log("Usuario correcto")
 
-    // TODO: Loguear
     this.login(user!);
   }
 

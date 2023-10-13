@@ -27,9 +27,12 @@ export class UsersService {
   }
 
   deleteUser(user: User) : Observable<boolean> {
-    return this.http.delete(`${ this.baseUrl}/users/${user.id}`)
+    console.log("Voy a borrar al usuario " + user.id)
+    console.log(`${this.baseUrl}/users/${user.id}`)
+    return this.http.delete(`${this.baseUrl}/users/${user.id}`)
       .pipe(
-        map(resp => true),
+        map(resp => true
+          ),
         catchError(err => of(false)),
       );
   }

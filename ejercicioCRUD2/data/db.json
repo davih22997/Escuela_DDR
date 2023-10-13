@@ -6,7 +6,7 @@
       "surname": "user",
       "email": "user@user.com",
       "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
+      "admin": true
     },
     {
       "id": "admin",
@@ -30,61 +30,13 @@
       "surname": "holi",
       "email": "holi@holi.es",
       "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "chao",
-      "name": "chao",
-      "surname": "chao",
-      "email": "chao@chao.es",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "holiwi",
-      "name": "holiwi",
-      "surname": "holiwi",
-      "email": "holiwi@hola.es",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "chaito",
-      "name": "chaito",
-      "surname": "chaito",
-      "email": "chaito@chao.es",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
+      "admin": true
     },
     {
       "id": "usuario",
       "name": "usuario",
       "surname": "user",
       "email": "usuario@user.com",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "davidDR",
-      "name": "David",
-      "surname": "Diaz Roldan",
-      "email": "david.diazr@viewnext.com",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "nick",
-      "name": "nick",
-      "surname": "nick",
-      "email": "nick@nick.es",
-      "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
-      "admin": false
-    },
-    {
-      "id": "nick2",
-      "name": "nick",
-      "surname": "nick",
-      "email": "nick2@nick.es",
       "password": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413",
       "admin": false
     }

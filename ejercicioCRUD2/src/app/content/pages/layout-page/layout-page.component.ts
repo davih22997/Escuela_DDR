@@ -7,7 +7,8 @@ import { User } from 'src/app/auth/interfaces/user.interface';
   selector: 'content-layout-page',
   templateUrl: './layout-page.component.html',
   styles: [
-  ]
+  ],
+  styleUrls: []
 })
 export class LayoutPageComponent {
   public sidebarItems = [
