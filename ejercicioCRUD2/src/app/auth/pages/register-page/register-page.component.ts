@@ -19,14 +19,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     './register-page.component.css'
   ]
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent {
 
   // VARIABLES
   // Public variables
-  @Output()
-  public usersEvent = new EventEmitter<User[]>();
-  private users:User[] = [];
-
   public myForm: FormGroup = this.fb.group({
     name: [
       '',
@@ -96,18 +92,9 @@ export class RegisterPageComponent implements OnInit {
     private snackbar:MatSnackBar
   ) {}
 
-  ngOnInit(): void {
-    this.uService.getUsers()
-      .subscribe(users => {
-        this.users = users
-        this.usersEvent.emit(this.users);
-      });
-  }
-
   // Submit
   public onSubmit():void {
     this.myForm.markAllAsTouched();
-    console.log(this.users);
 
     if (!this.myForm.valid)
       return;

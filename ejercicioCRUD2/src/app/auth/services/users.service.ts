@@ -8,6 +8,7 @@ import { User } from "../interfaces/user.interface";
 @Injectable({providedIn: 'root'})
 export class UsersService {
   private baseUrl:string = environments.baseUrl;
+  private user?:User;
 
   constructor (private http: HttpClient) {  }
 

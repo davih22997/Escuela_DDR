@@ -1,5 +1,8 @@
 
-<div
+<form
+  [formGroup]="myForm"
+  (ngSubmit)="onLogin()"
+  autocomplete="off"
   class = "container"
 >
   <div class="flex flex-column p-5">
@@ -8,23 +11,44 @@
 
     <mat-form-field>
       <mat-label>Usuario o email</mat-label>
-      <input type="text" matInput placeholder="Nick de usuario o email">
+      <input
+        type="text"
+        matInput
+        placeholder="Nick de usuario o email"
+        formControlName="user"
+      >
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Contraseña</mat-label>
-      <input type="password" matInput placeholder="Contraseña">
+      <input
+        type="password"
+        matInput
+        placeholder="Contraseña"
+        formControlName="password"
+      >
     </mat-form-field>
 
-    <button mat-button mat-flat-button color="accent"
-      (click)="onLogin()">
+    <button
+      mat-button
+      mat-flat-button
+      color="accent"
+      type="submit"
+    >
       <mat-icon>forward</mat-icon>
       Ingresar
     </button>
+
+    <mat-error
+      *ngIf="incorrectUser || incorrectPasswd"
+      class="row form-text text-danger"
+    >
+      Datos de ingreso incorrectos
+    </mat-error>
 
     <div class="flex justify-content-end mt-5">
       <a routerLink="/auth/register">¿No tienes cuenta?</a>
     </div>
 
   </div>
-</div>
+</form>

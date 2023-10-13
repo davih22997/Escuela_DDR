@@ -4,17 +4,10 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable, map } from 'rxjs';
 
 import { UsersService } from '../../auth/services/users.service';
-import { environments } from 'src/environments/environtments';
-
 
 @Injectable({providedIn: 'root'})
 export class UserValidator  {
-  private baseUrl:string = environments.baseUrl;
-
-
-  constructor(
-    private uService: UsersService
-  ){}
+  constructor(private uService: UsersService){}
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     const user = control.value;

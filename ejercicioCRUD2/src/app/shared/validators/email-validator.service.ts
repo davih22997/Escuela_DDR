@@ -1,14 +1,18 @@
 
 import { Injectable } from '@angular/core';
 import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
-import { Observable, delay, map, of } from 'rxjs';
+import { Observable, map} from 'rxjs';
+
 import { UsersService } from 'src/app/auth/services/users.service';
 
 @Injectable({providedIn: 'root'})
 export class EmailValidator implements AsyncValidator {
 
+  // METHODS
+  // Constructor
   constructor(private uService:UsersService){}
 
+  // Validation
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     const email = control.value;
 
@@ -24,13 +28,3 @@ export class EmailValidator implements AsyncValidator {
       )
   }
 }
-
-
-// return this.http.get(`https://miservicio.com`)
-//           .pipe(
-//               .map(resp => {
-//                 return (resp.length === 0)
-//                   ? null
-//                   : {emailTaken: true}
-//               })
-//           )
