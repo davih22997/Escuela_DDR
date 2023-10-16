@@ -78,6 +78,13 @@ export class MarkersPageComponent {
     });
 
     this.saveToLocalStorage();
+
+    marker.on('dragend', () => {
+      this.saveToLocalStorage()
+    });
+
+    // dragend
+
   }
 
 
