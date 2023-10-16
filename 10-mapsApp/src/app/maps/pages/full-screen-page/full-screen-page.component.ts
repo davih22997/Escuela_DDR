@@ -3,6 +3,7 @@ import { Map } from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 
 @Component({
+  standalone: false,
   templateUrl: './full-screen-page.component.html',
   styleUrls: ['./full-screen-page.component.css']
 })
