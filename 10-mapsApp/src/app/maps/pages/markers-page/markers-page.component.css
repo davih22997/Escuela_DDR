@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-list-group {
+.list-group {
   position:fixed;
   top: 20px;
   right: 20px;
