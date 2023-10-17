@@ -22,5 +22,9 @@
 ### Secciones:
 - Secciones 22-38 completas
 
+# Visual Studio Code
+### Secciones
+- Secciones 1-3 completas
+
 ## Angular
 -> See `angularApp` branch
