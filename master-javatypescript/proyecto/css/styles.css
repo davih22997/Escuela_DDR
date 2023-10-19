@@ -21,7 +21,7 @@ body {
         "content content content lateral"
         "footer footer footer footer"
     ;
-    grid-template-rows: 100px 70px auto 1px;
+    grid-template-rows: 100px 70px auto 70px;
 }
 
 .header {
@@ -119,6 +119,7 @@ body {
 }
 
 .peli-item {
+    flex-grow: 1;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 6px #ddd;
@@ -248,7 +249,6 @@ input[type="button"]
 
     .peli-item {
         width: 80%;
-
     }
 
 }
