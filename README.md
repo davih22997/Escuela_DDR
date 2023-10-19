@@ -24,7 +24,7 @@
 
 # Visual Studio Code
 ### Secciones
-- Secciones 1-3 completas
+- Secciones 1-5 completas
 
 ## Angular
 -> See `angularApp` branch
