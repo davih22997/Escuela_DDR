@@ -106,10 +106,35 @@ body {
     -o-transform: scale(1.10, 1.10);
 }
 
+/* ESTILOS PARA EL CONTENIDO PRINCIPAL */
+
 .content {
     grid-area: content;
-    border: 5px solid green;
-    background: lightgreen;
+    background: #f6f7f9;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.peli-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px #ddd;
+    margin: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .lateral {
