@@ -31,7 +31,7 @@ export default class Add {
             if (title != "" || description != "") {
                 // Crear objeto a guardar
                 let peli = {
-                    id: 1,
+                    id: pelis.length,
                     title,
                     description
                 }

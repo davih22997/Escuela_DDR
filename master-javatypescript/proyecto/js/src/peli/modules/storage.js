@@ -19,7 +19,6 @@ export default class Storage{
             this.id = 1;
         } else {
             this.id = pelis[pelis.length - 1].id + 1;
-            console.log(this.id);
         }
 
         return pelis;

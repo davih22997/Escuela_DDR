@@ -1,3 +1,5 @@
+import deleteOfList from "./delete.js"
+
 export default class List {
     constructor() {
         // Seleccionar elementos del dom a usar
@@ -24,6 +26,10 @@ export default class List {
             this.content.innerHTML += this.peliTemplate(peli);
         });
 
+        // Funcionalidad botones de borrado
+        deleteOfList();
+
+        // Funcionalidad botones de edición
 
     }
 
