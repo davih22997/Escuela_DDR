@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="module" src="js/main.js" defer></script>
     <title>Proyecto con Víctor Robles WEB</title>
 </head>
 <body>
@@ -29,29 +30,8 @@
         </nav>
 
         <!-- Contenido principal -->
-        <section class="content">
+        <section id="content" class="content">
             <!-- aquí van las películas -->
-            <article class="peli-item">
-                <h3 class="title">Desarrollo web</h3>
-                <p class="description">victorroblesweb.es</p>
-
-                <button class="edit">Editar</button>
-                <button class="delete">Borrar</button>
-            </article>
-            <article class="peli-item">
-                <h3 class="title">Desarrollo web</h3>
-                <p class="description">victorroblesweb.es</p>
-
-                <button class="edit">Editar</button>
-                <button class="delete">Borrar</button>
-            </article>
-            <article class="peli-item">
-                <h3 class="title">Desarrollo web</h3>
-                <p class="description">victorroblesweb.es</p>
-
-                <button class="edit">Editar</button>
-                <button class="delete">Borrar</button>
-            </article>
             <article class="peli-item">
                 <h3 class="title">Desarrollo web</h3>
                 <p class="description">victorroblesweb.es</p>
@@ -74,9 +54,9 @@
             <div class="add">
                 <h3 class="title">Añadir película</h3>
                 <form>
-                    <input type="text" aria-placeholder="Título">
-                    <textarea placeholder="Descripción"></textarea>
-                    <input type="submit"value="Guardar">
+                    <input type="text" id="title" aria-placeholder="Título">
+                    <textarea id="description" placeholder="Descripción"></textarea>
+                    <input type="submit" id="save" value="Guardar">
                 </form>
             </div>
 
