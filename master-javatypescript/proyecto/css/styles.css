@@ -21,7 +21,7 @@ body {
         "content content content lateral"
         "footer footer footer footer"
     ;
-    grid-template-rows: 100px 70px auto 70px;
+    grid-template-rows: 100px 70px auto 1px;
 }
 
 .header {
@@ -201,12 +201,6 @@ input[type="button"]
     box-shadow: 0px 0px 6px #ddd;
 }
 
-.footer {
-    grid-area: footer;
-    border: 5px solid black;
-    background: lightpink;
-}
-
 .lateral input[type="text"], 
 .lateral input[type="text"],
 .lateral textarea {
@@ -225,4 +219,36 @@ input[type="button"]
     opacity: 4;
     outline: 0;
     border-color: transparent;
+}
+
+/* ESTILOS PARA EL PIE DE PÁGINA */
+
+.footer {
+    grid-area: footer;
+    
+    background: #d1defa;
+    color: #454545;
+    border-top: 1px solid white;
+    text-align: left;
+    line-height: 68px;
+    padding-left: 25px;
+}
+
+.footer a {
+    color: #0b468a;
+    text-decoration: none;
+}
+
+@media(max-width: 1085px) {
+    .content {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .peli-item {
+        width: 80%;
+
+    }
+
 }
